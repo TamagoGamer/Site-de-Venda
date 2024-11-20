@@ -1,0 +1,224 @@
+/* Reset global mantendo a formatação original */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif; /* Adicionando uma fonte padrão */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* ou absolute, dependendo do seu layout */
+    z-index: 1000; /* Um valor alto para garantir que fique acima de outros elementos */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 20px; /* Aumentado de 18px para 20px */
+    font-weight: bold;
+    color: #333; /* Cor mais escura para melhor contraste */
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+/* Nav Links e Dropdown */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.menu-item {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px; /* Aumentado de 16px para 17px */
+    font-weight: 500; /* Peso da fonte um pouco mais forte */
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:   white;;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 10px 20px; /* Aumentado o padding vertical */
+    text-decoration: none;
+    display: block;
+    font-size: 15px; /* Aumentado de 14px para 15px */
+    font-weight: 400; /* Peso normal para o texto do dropdown */
+}
+
+.dropdown-menu a:hover {
+    background-color: white;;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Menu Toggle para Mobile */
+.menu-toggle {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        padding: 10px;
+    }
+
+    .logo span {
+        font-size: 18px; /* Ajustado para mobile */
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 0;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+        z-index: 1000; /* Um valor alto para garantir que fique na frente */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-item {
+        padding: 15px 20px;
+        font-size: 16px; /* Ajustado para mobile */
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: #f5f5f5;
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    .dropdown-toggle {
+        justify-content: center;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+}
