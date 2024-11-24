@@ -53,83 +53,119 @@
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
-
-    <main>
-        <!-- Titulo -->
-        <div class="historia-container">
-            <section class="historia-header">
-                <h1>História da AutoEscola PW</h1>
-            </section>
-            <!-- Historia -->
-            <section class="historia-conteudo">
-                <div class="historia-texto">
-                    <p>Fundada em 1998, a AutoEscola PW nasceu do sonho de dois amigos, Pedro e Wagner, que sempre
-                        compartilharam a paixão por ensinar e a vontade de criar uma empresa que ajudasse as pessoas a
-                        conquistarem sua liberdade no trânsito. Com apenas um carro e uma sala pequena, eles começaram
-                        oferecendo aulas práticas e teóricas para seus primeiros alunos.</p>
-
-                    <p>Rapidamente, a AutoEscola PW destacou-se pela qualidade e pela forma humanizada com que ensinava.
-                        Seu foco sempre foi o aprendizado consciente e responsável, garantindo que os novos condutores
-                        saíssem não apenas com a habilitação em mãos, mas também com segurança, habilidade e respeito
-                        pelas normas de trânsito.</p>
-
-                    <p>Ao longo dos anos, a AutoEscola PW ampliou suas operações, introduziu novos veículos para as
-                        aulas práticas e começou a investir em tecnologia para melhorar a experiência dos alunos. A
-                        empresa também desenvolveu cursos específicos, como aulas para motociclistas e treinamento
-                        especializado para condutores profissionais.</p>
-
-                    <p>Hoje, com uma estrutura moderna e instrutores altamente qualificados, a AutoEscola PW é uma
-                        referência em ensino de condução na região, tendo formado milhares de condutores ao longo de
-                        mais de duas décadas de atuação.</p>
+        <main>
+            <div class="flex-container">
+                <section class="filter-section">
+                    <h2>Filtrar Produtos</h2>
+                    <label for="category">Categoria:</label>
+                    <select id="category" onchange="filterProducts()">
+                        <option value="all">Todos</option>
+                        <option value="geladeira">Geladeiras</option>
+                        <option value="microondas">Micro-ondas</option>
+                        <option value="lava-roupas">Máquinas de Lavar</option>
+                    </select>
+        
+                    <label for="price">Preço:</label>
+                    <select id="price" onchange="filterProducts()">
+                        <option value="all">Todos</option>
+                        <option value="baixo">Abaixo de R$ 500</option>
+                        <option value="medio">R$ 500 - R$ 1000</option>
+                        <option value="alto">Acima de R$ 1000</option>
+                    </select>
+        
+                    <label for="popularity">Popularidade:</label>
+                    <select id="popularity" onchange="filterProducts()">
+                        <option value="all">Todos</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Média</option>
+                        <option value="baixa">Baixa</option>
+                    </select>
+                </section>
+        
+                <div class="product-section">
+                    <!-- Coloque aqui todas as divs de produtos -->
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="https://via.placeholder.com/150" alt="Produto 2">
+                        <h3>Produto 2</h3>
+                        <p>Descrição do Produto 2.</p>
+                        <p class="price">29,90€</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <!-- Adicione mais produtos conforme necessário -->
                 </div>
-                <div class="historia-imagem">
-                    <img src="/src/assets/img/Imagem para Historia.jpg" alt="Imagem da história da AutoEscola PW">
-                </div>
-            </section>
-
-            <section class="missao-visao-valores">
-                <div class="missao">
-                    <h2>Missão</h2>
-                    <p>A missão da AutoEscola PW é formar condutores conscientes, responsáveis e preparados para
-                        enfrentar os desafios do trânsito, promovendo uma educação que valoriza a segurança, o respeito
-                        e a empatia. A empresa busca ensinar habilidades práticas e teóricas que ajudem cada aluno a
-                        conduzir com responsabilidade, contribuindo para um trânsito mais seguro e humano.</p>
-                </div>
-
-                <div class="visao">
-                    <h2>Visão</h2>
-                    <p>A AutoEscola PW aspira ser a principal referência de ensino de condução no país, reconhecida pela
-                        excelência de seus cursos e pelo compromisso com a educação de trânsito. A empresa quer expandir
-                        sua atuação, sempre mantendo a qualidade no atendimento e promovendo um impacto positivo na
-                        segurança das vias. O objetivo é que todos os alunos da AutoEscola PW saiam capacitados e
-                        confiantes, preparados para dirigir de forma responsável e segura.</p>
-                </div>
-
-                <div class="valores">
-                    <h2>Valores</h2>
-                    <ul>
-                        <li><strong>Responsabilidade:</strong> Formar condutores que respeitem as leis de trânsito e
-                            compreendam a importância da responsabilidade na condução.</li>
-                        <li><strong>Qualidade no Ensino:</strong> Compromisso em oferecer uma educação completa, com
-                            instrutores qualificados e infraestrutura adequada.</li>
-                        <li><strong>Respeito e Empatia:</strong> Tratar todos os alunos de forma igualitária e
-                            respeitosa, reconhecendo as particularidades de cada um e proporcionando um ambiente de
-                            aprendizado acolhedor.</li>
-                        <li><strong>Inovação:</strong> Utilizar novas tecnologias e métodos para aprimorar a experiência
-                            dos alunos, tornando o aprendizado mais acessível e eficaz.</li>
-                        <li><strong>Sustentabilidade:</strong> Contribuir para um trânsito seguro e sustentável,
-                            incentivando práticas que preservem o meio ambiente e reduzam o impacto ambiental dos
-                            veículos.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="conclusao">
-                <p>A AutoEscola PW é mais do que uma escola de condução; é um projeto que transforma vidas e promove uma
-                    cultura de respeito e segurança no trânsito.</p>
             </div>
-        </div>
-    </main>
+        </main>
 
     <footer class="footer">
         <div class="footer-content">
@@ -196,10 +232,12 @@
                     <img src="https://www.istec.pt/wp-content/uploads/2023/12/LogoLR.png" alt="Livro de Reclamações">
                 </a>
             </div>
-            <p class="copyright">© 2024 AutoEscola PW - Escola de instrução. All rights reserved</p>
+            <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
+
     <script src="/src/assets/js/script.js"></script>
+    <script src="/src/assets/js/filtragem.js"></script>
 </body>
 
 </html>
