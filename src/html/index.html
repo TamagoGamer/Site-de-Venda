@@ -4,145 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Título do site -->
-    <title>AutoEscola PW</title>
-    <!-- Folhas de CSS -->
+    <title>Loja Online - Produtos</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="/src/assets/Styles/styles.css"> <!-- Novo CSS adicionado -->
 </head>
 
 <body>
     <header>
-        <!-- Logo e  nome da autoescola -->
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
                     <img src="/src/assets/img/descarregar (2).jfif" alt="LOGO">
-                    <span>AutoEscola PW</span>
+                    <span>Loja Online</span>
                 </a>
             </div>
-            <!-- Botões Dropdown -->
             <ul class="nav-links" id="nav-links">
-                <li>
-                    <a href="index.html" class="menu-item">Home</a>
-                </li>
+                <li><a href="index.html" class="menu-item">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">
-                        AutoEscola PW <span class="arrow-down"></span>
-                    </a>
+                    <a href="#" class="menu-item dropdown-toggle">Categorias <span class="arrow-down"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="historia.html">História</a></li>
-                        <li><a href="equipa.html">Equipa</a></li>
-                        <li><a href="portifolio.html">Portifólio</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="politicas.html">Políticas de Privacidade e Termos de usos</a></li>
+                        <li><a href="categoria1.html">Eletrônicos</a></li>
+                        <li><a href="categoria2.html">Eletrodomésticos</a></li>
+                        <li><a href="categoria3.html">Acessórios</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">
-                        Cursos <span class="arrow-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="cursoA.html">Curso de Categoria A1</a></li>
-                        <li><a href="cursoB.html">Curso de Categoria B</a></li>
-                        <li><a href="cursoC.html">Curso de Categoria C</a></li>
-                        <li><a href="cursoD.html">Curso de Categoria D</a></li>
-                    </ul>
-                </li>
+                <li><a href="carrinho.html" class="menu-item">Carrinho</a></li>
             </ul>
-            <!-- Ícones  de redes sociais -->
-            <div class="social-icons">
-                <a href= "https://www.facebook.com/?locale=pt_PT" ><img src="/src/assets/img/facebook-brands-solid.png" alt="Facebook"></a>
-                <a href= "https://www.youtube.com" ><img src="/src/assets/img/youtube-brands-solid.png" alt="YouTube"></a>
-                <a href= "https://pt.linkedin.com" ><img src="/src/assets/img/linkedin-brands-solid.png" alt="LinkedIn"></a>
-                <a href= "https://www.instagram.com" ><img src="/src/assets/img/instagram-brands-solid.png" alt="Instagram"></a>
-            </div>
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
 
     <main>
-            <div class="carousel">
-                <input type="radio" name="slides" id="slide1" checked>
-                <input type="radio" name="slides" id="slide2">
-                <input type="radio" name="slides" id="slide3">
-        
-                <div class="carousel-images">
-                    <div class="slide">
-                        <img src="/src/assets/img/Lateral A.jpg" alt="Imagem 1">
-                    </div>
-                    <div class="slide">
-                        <img src="/src/assets/img/Lateral B.jpg" alt="Imagem 2">
-                    </div>
-                    <div class="slide">
-                        <img src="/src/assets/img/Lateral C.jpg" alt="Imagem 3">
-                    </div>
+        <div class="carousel">
+            <input type="radio" name="slides" id="slide1" checked>
+            <input type="radio" name="slides" id="slide2">
+            <input type="radio" name="slides" id="slide3">
+    
+            <div class="carousel-images">
+                <div class="slide">
+                    <img src="/src/assets/img/Lateral A.jpg" alt="Imagem 1">
                 </div>
-        
-                <div class="carousel-nav">
-                    <label for="slide1" class="carousel-dot"></label>
-                    <label for="slide2" class="carousel-dot"></label>
-                    <label for="slide3" class="carousel-dot"></label>
+                <div class="slide">
+                    <img src="/src/assets/img/Lateral B.jpg" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <img src="/src/assets/img/Lateral C.jpg" alt="Imagem 3">
                 </div>
             </div>
-            <div class="quadrados">
-                <div class="professor1">
-                    <img src="/src/assets/img/Cursos_index.png" alt="Logo 1">
-                    <h2>Cursos de Condução de Qualidade para Você!</h2>
-                    <p>Está pronto para tirar sua habilitação ou aprimorar suas habilidades ao volante? Oferecemos cursos de condução completos, com aulas teóricas e práticas que garantem um aprendizado seguro e eficaz. Nossos instrutores são altamente qualificados e estão prontos para te ajudar a conquistar a confiança necessária para dirigir com segurança.
+    
+            <div class="carousel-nav">
+                <label for="slide1" class="carousel-dot"></label>
+                <label for="slide2" class="carousel-dot"></label>
+                <label for="slide3" class="carousel-dot"></label>
+            </div>
+        <section class="banner">
+            <img src="/src/assets/img/banner.jpg" alt="Promoção Especial" style="width: 100%;">
+        </section>
 
-                        Seja para primeira habilitação, reciclagem ou direção defensiva, temos o curso certo para você. Venha aprender conosco e prepare-se para dirigir com tranquilidade e responsabilidade!
-                        
-                        Inscreva-se já e comece sua jornada ao volante!</p>
-                    <p class="descricao"></p>
-                </div>
+        <section class="produtos-destaque">
+            <h2>Produtos em Destaque</h2>
+            <div class="produto">
+                <img src="/src/assets/img/produto1.jpg" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>Descrição do produto 1.</p>
+                <p>Preço: R$ 99,99</p>
+                <button>Adicionar ao Carrinho</button>
             </div>
-            <div class="quadrados">
-                <section class="safety-tips">
-                    <h2>Dicas de Segurança no Trânsito</h2>
-                    <ul>
-                        <li>Sempre use o cinto de segurança</li>
-                        <li>Respeite os limites de velocidade</li>
-                        <li>Não use o celular enquanto dirige</li>
-                        <li>Mantenha a distância segura do veículo à frente</li>
-                        <li>Faça a manutenção regular do seu veículo</li>
-                    </ul>
-                    <img src="/src/assets/img/Segurança.jpg" alt="Condução segura">
-                </section>
+            <div class="produto">
+                <img src="/src/assets/img/produto2.jpg" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>Descrição do produto 2.</p>
+                <p>Preço: R$ 149,99</p>
+                <button>Adicionar ao Carrinho</button>
             </div>
-            <div class="quadrados">
-                <section class="testimonials">
-                    <h2>O que dizem nossos alunos</h2>
-                    <div class="testimonial-grid">
-                        <div class="testimonial">
-                            <img src="/src/assets/img/Aluna.jpg" alt="Foto do aluno">
-                            <p>"Graças à AutoEscola PW, passei no exame de condução na primeira tentativa. Os instrutores são
-                                excelentes!"</p>
-                            <p class="student-name">- Maria Silva</p>
-                        </div>
-                    
-                    </div>
-                </section>
+            <div class="produto">
+                <img src="/src/assets/img/produto3.jpg" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>Descrição do produto 3.</p>
+                <p>Preço: R$ 199,99</p>
+                <button>Adicionar ao Carrinho</button>
             </div>
-            <div class="quadrados">
-                <section class="testimonials">
-                    <h2>O que dizem nossos alunos</h2>
-                    <div class="testimonial-grid">
-                        <div class="testimonial">
-                            <img src="/src/assets/img/Aluno.jpg" alt="Foto do aluno">
-                            <p>"As aulas teóricas são muito interessantes e as práticas me deram muita confiança. Recomendo!"
-                            </p>
-                            <p class="student-name">- João Santos</p>
-                        </div>
-                    </div>
-                </section>
+            <!-- Adicione mais produtos conforme necessário -->
+        </section>
+
+        <section class="promocoes">
+            <h2>Promoções Especiais</h2>
+            <div class="promocao">
+                <img src="/src/assets/img/promo1.jpg" alt="Promoção 1">
+                <h3>Desconto de 20% em Eletrodomésticos</h3>
+                <button>Ver Promoção</button>
             </div>
+            <div class="promocao">
+                <img src="/src/assets/img/promo2.jpg" alt="Promoção 2">
+                <h3>Compre 1, Leve 2 em Acessórios</h3>
+                <button>Ver Promoção</button>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <!-- Formulário de contato -->
             <div class="contact-form">
                 <h3>Entre em Contato</h3>
                 <form>
@@ -153,61 +116,17 @@
                         <input type="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Telefone" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Mensagem" required></textarea>
+ <textarea placeholder="Mensagem" required></textarea>
                     </div>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
-
-            <!-- Lado direito com mapa, localização e horários -->
-            <div class="footer-right">
-                <div class="location-info">
-                    <div class="map-container">
-                        <div class="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.8026912632404!2d-9.16063332417581!3d38.76822927175187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932ee12d27e1b%3A0x6646176f5efe460d!2sR.%20Silva%20Tavares%201%2C%201750-155%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1731344300808!5m2!1spt-PT!2spt" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                        <div class="address">
-                            <p>R. Silva Tavares 1, 1750-155 Lisboa</p>
-                        </div>
-                    </div>
-                    <!-- Horários de Funcionamento no Footer -->
-                    <div class="footer-hours">
-                        <h4>Horário de Funcionamento</h4>
-                        <div class="hours-item">
-                            <div class="clock-icon">
-                                <img src="/src/assets/img/clock-regular.png" alt="Ícone de relógio">
-                            </div>
-                            <div class="hours-text">
-                                <p class="days">Segunda a Sexta</p>
-                                <p class="time">09:00h - 20:00h</p>
-                            </div>
-                        </div>
-                        <div class="hours-item">
-                            <div class="clock-icon">
-                                <img src="/src/assets/img/clock-regular.png" alt="Ícone de relógio">
-                            </div>
-                            <div class="hours-text">
-                                <p class="days">Sábado e Domingo</p>
-                                <p class="time">09:00h - 13:00h</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- Livro de reclamações -->
-        <div class="footer-info">
-            <div class="complaint-book">
-                <a href="https://www.livroreclamacoes.pt" target="_blank">
-                    <img src="https://www.istec.pt/wp-content/uploads/2023/12/LogoLR.png" alt="Livro de Reclamações">
-                </a>
-            </div>
-            <p class="copyright">© 2024 AutoEscola PW - Escola de instrução. All rights reserved</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
         </div>
     </footer>
+
     <script src="/src/assets/js/script.js"></script>
 </body>
 
