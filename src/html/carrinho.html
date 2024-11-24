@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AutoEscola PW - Perguntas Frequentes</title>
-    <!-- Folhas de CSS -->
-    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/faqs.css">
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
 </head>
-
+<body>
+    <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css"> <!-- Adicione um CSS específico para o carrinho, se necessário -->
+</head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
                     <img src="/src/assets/img/descarregar (2).jfif" alt="LOGO">
-                    <span>Loja Online</span>
+                    <span>AutoEscola PW</span>
                 </a>
             </div>
             <ul class="nav-links" id="nav-links">
@@ -33,73 +40,51 @@
                         <li><a href="portifolio.html">Portfólio</a></li>
                         <li><a href="politicas.html">Políticas de Privacidade</a></li>
                     </ul>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">Categorias <span class="arrow-down"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="categoria1.html">Eletrônicos</a></li>
-                        <li><a href="categoria2.html">Eletrodomésticos</a></li>
-                        <li><a href="categoria3.html">Acessórios</a></li>
-                    </ul>
                 </li>
                 <li><a href="carrinho.html" class="menu-item">Carrinho</a></li>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">
-                        <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Registrar</a></li>
-                    </ul>
-                </li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
 
     <main>
-        <!-- FAQs -->
-        <div class="faqs-container">
-            <section class="faqs-header">
-                <h1>Perguntas Frequentes</h1>
-                <p>Encontre respostas para as dúvidas mais comuns sobre nossos cursos e processo de habilitação</p>
-            </section>
-
-            <div class="faq-categories">
-                <section class="faq-category">
-                    <h2 class="category-toggle">Processo de Inscrição <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Qual é a idade mínima para começar as aulas? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">Para categoria B (carros), você pode se inscrever aos 17 anos e meio, mas só poderá realizar o exame prático aos 18 anos. Para motos (A1), a idade mínima é 16 anos.</p>
-                        </div>
-
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
-
-                <section class="faq-category">
-                    <h2 class="category-toggle">Número de Aulas por Curso <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Quantas aulas são necessárias para a categoria A1 (motos)? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">Para a categoria A1, são necessárias 28 aulas teóricas e 12 aulas práticas, totalizando 40 aulas.</p>
-                        </div>
-
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
-
-                <section class="faq-category">
-                    <h2 class="category-toggle">Prazo para Conclusão do Curso <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Qual é o prazo máximo para concluir o processo de habilitação? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">O prazo máximo para concluir todo o processo de habilitação, desde a inscrição até a aprovação no exame prático, é de 2 anos.</p>
-                        </div>
-
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
+        <div class="carrinho-container">
+            <h1>Carrinho de Compras</h1>
+            <table class="carrinho-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Produto 1</td>
+                        <td>
+                            <input type="number" value="1" min="1" max="10">
+                        </td>
+                        <td>R$ 99,99</td>
+                        <td>R$ 99,99</td>
+                        <td><button class="remove-btn">Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td>Produto 2</td>
+                        <td>
+                            <input type="number" value="1" min="1" max="10">
+                        </td>
+                        <td>R$ 149,99</td>
+                        <td>R$ 149,99</td>
+                        <td><button class="remove-btn">Remover</button></td>
+                    </tr>
+                    <!-- Adicione mais produtos conforme necessário -->
+                </tbody>
+            </table>
+            <div class="carrinho-total">
+                <h2>Total: R$ 249,98</h2>
+                <button class="checkout-btn">Finalizar Compra</button>
             </div>
         </div>
     </main>
@@ -169,11 +154,10 @@
                     <img src="https://www.istec.pt/wp-content/uploads/2023/12/LogoLR.png" alt="Livro de Reclamações">
                 </a>
             </div>
-            <p class="copyright">© 2024 AutoEscola PW - Escola de instrução. All rights reserved</p>
+            <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
-    <script src="/src/assets/js/script.js"></script>
-    <script src="/src/assets/js/faqs.js"></script>
-</body>
 
+    <script src="/src/assets/js/script.js"></script>
+</body>
 </html>

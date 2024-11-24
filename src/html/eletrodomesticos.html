@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AutoEscola PW - Perguntas Frequentes</title>
-    <!-- Folhas de CSS -->
+    <title>Loja Online - Produtos</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/faqs.css">
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css">
+    <link rel="stylesheet" href="/src/assets/Styles/styles.css"> <!-- Novo CSS adicionado -->
 </head>
 
 <body>
@@ -57,51 +55,66 @@
     </header>
 
     <main>
-        <!-- FAQs -->
-        <div class="faqs-container">
-            <section class="faqs-header">
-                <h1>Perguntas Frequentes</h1>
-                <p>Encontre respostas para as dúvidas mais comuns sobre nossos cursos e processo de habilitação</p>
-            </section>
+        <section class="filter-section">
+            <h2>Filtrar Produtos</h2>
+            <label for="category">Categoria:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">Todos</option>
+                <option value="geladeira">Geladeiras</option>
+                <option value="microondas">Micro-ondas</option>
+                <option value="lava-roupas">Máquinas de Lavar</option>
+            </select>
 
-            <div class="faq-categories">
-                <section class="faq-category">
-                    <h2 class="category-toggle">Processo de Inscrição <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Qual é a idade mínima para começar as aulas? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">Para categoria B (carros), você pode se inscrever aos 17 anos e meio, mas só poderá realizar o exame prático aos 18 anos. Para motos (A1), a idade mínima é 16 anos.</p>
-                        </div>
+            <label for="price">Preço:</label>
+            <select id="price" onchange="filterProducts()">
+                <option value="all">Todos</option>
+                <option value="baixo">Abaixo de R$ 500</option>
+                <option value="medio">R$ 500 - R$ 1000</option>
+                <option value="alto">Acima de R$ 1000</option>
+            </select>
 
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
+            <label for="popularity">Popularidade:</label>
+            <select id="popularity" onchange="filterProducts()">
+                <option value="all">Todos</option>
+                <option value="alta">Alta</option>
+                <option value="media">Média</option>
+                <option value="baixa">Baixa</option>
+            </select>
+        </section>
 
-                <section class="faq-category">
-                    <h2 class="category-toggle">Número de Aulas por Curso <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Quantas aulas são necessárias para a categoria A1 (motos)? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">Para a categoria A1, são necessárias 28 aulas teóricas e 12 aulas práticas, totalizando 40 aulas.</p>
-                        </div>
-
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
-
-                <section class="faq-category">
-                    <h2 class="category-toggle">Prazo para Conclusão do Curso <span class="toggle-icon">+</span></h2>
-                    <div class="category-content">
-                        <div class="faq-item">
-                            <h3 class="faq-toggle">Qual é o prazo máximo para concluir o processo de habilitação? <span class="toggle-icon">+</span></h3>
-                            <p class="faq-answer">O prazo máximo para concluir todo o processo de habilitação, desde a inscrição até a aprovação no exame prático, é de 2 anos.</p>
-                        </div>
-
-                        <!-- Adicione mais itens de FAQ aqui -->
-                    </div>
-                </section>
+        <section class="product-section" id="product-list">
+            <h2>Produtos em Destaque</h2>
+            <div class="product" data-category="geladeira" data-price="800" data-popularity="alta">
+                <img src="geladeira.jpg" alt="Geladeira Frost Free">
+                <h3>Geladeira Frost Free</h3>
+                <p>Preço: R$ 800,00</p>
             </div>
-        </div>
+            <div class="product" data-category="microondas" data-price="300" data-popularity="alta">
+                <img src="microondas.jpg" alt="Micro-ondas 20L">
+                <h3>Micro-ondas 20L</h3>
+                <p>Preço: R$ 300,00</p>
+            </div>
+            <div class="product" data-category="lava-roupas" data-price="1200" data-popularity="media">
+                <img src="lava-roupas.jpg" alt="Máquina de Lavar 10kg">
+                <h3>Máquina de Lavar 10kg</h3>
+                <p>Preço: R$ 1200,00</p>
+            </div>
+            <div class="product" data-category="geladeira" data-price="1500" data-popularity="baixa">
+                <img src="geladeira2.jpg" alt="Geladeira Inox 450L">
+                <h3>Geladeira Inox 450L</h3>
+                <p>Preço: R$ 1500,00</p>
+            </div>
+            <div class="product" data-category="microondas" data-price="400" data-popularity="media">
+                <img src="microondas2.jpg" alt="Micro-ondas 30L">
+                <h3>Micro-ondas 30L</h3>
+                <p>Preço: R$ 400,00</p>
+            </div>
+            <div class="product" data-category="lava-roupas" data-price="900" data-popularity="alta">
+                <img src="lava-roupas2.jpg" alt="Máquina de Lavar 8kg">
+                <h3>Máquina de Lavar 8kg</h3>
+                <p>Preço: R$ 900,00</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -169,11 +182,12 @@
                     <img src="https://www.istec.pt/wp-content/uploads/2023/12/LogoLR.png" alt="Livro de Reclamações">
                 </a>
             </div>
-            <p class="copyright">© 2024 AutoEscola PW - Escola de instrução. All rights reserved</p>
+            <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
+
     <script src="/src/assets/js/script.js"></script>
-    <script src="/src/assets/js/faqs.js"></script>
+    <script src="/src/assets/js/filtragem.js"></script>
 </body>
 
 </html>
