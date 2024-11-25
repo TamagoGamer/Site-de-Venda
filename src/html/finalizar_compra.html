@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Página do Utilizador</title>
+    <title>Finalizar Compra</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css">
-    <link rel="stylesheet" href="/src/assets/Styles/register.css">
-    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
-    <link rel="stylesheet" href="/src/assets/Styles/main.css">
-    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
 </head>
 
 <body>
@@ -27,80 +21,43 @@
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="menu-item">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">Suporte <span class="arrow-down"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="politicas.html">Políticas de Privacidade</a></li>
-                    </ul>
                 <li><a href="carrinho.html" class="menu-item">Carrinho</a></li>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">
-                        <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
-                        Perfil <span class="arrow-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Registrar</a></li>
-                        <li><a href="utilizador.html" class="menu-item">Minha Conta</a></li>
-                    </ul>
-                </li>
+                <li><a href="login.html" class="menu-item">Login</a></li>
+                <li><a href="register.html" class="menu-item">Registrar</a></li>
             </ul>
-            <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
 
     <main>
-        <div class="user-container">
-            <h1>Minha Conta</h1>
-
-            <section class="user-info">
-                <h2>Informações da Conta</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" placeholder="Digite seu nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Senha:</label>
-                        <input type="password" id="password" placeholder="Digite sua senha" required>
-                    </div>
-                    <button type="submit">Salvar Alterações</button>
-                </form>
-            </section>
-
-            <section class="order-history">
-                <h2>Histórico de Pedidos</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID do Pedido</th>
-                            <th>Data</th>
-                            <th>Status</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#12345</td>
-                            <td>01/01/2024</td>
-                            <td>Entregue</td>
-                            <td>R$ 199,99</td>
-                        </tr>
-                        <tr>
-                            <td>#12346</td>
-                            <td>15/01/2024</td>
-                            <td>Em Processamento</td>
-                            <td>R$ 299,99</td>
-                        </tr>
-                        <!-- Adicione mais pedidos conforme necessário -->
-                    </tbody>
-                </table>
-            </section>
+        <div class="finalizar-container">
+            <h1>Finalizar Compra</h1>
+            <form id="finalizarForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="morada">Morada:</label>
+                    <input type="text" id="morada" placeholder="Digite sua morada" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Número de Contato:</label>
+                    <input type="tel" id="telefone" placeholder="Digite seu número de contato" required>
+                </div>
+                <div class="form-group">
+                    <label for="pagamento">Tipo de Pagamento:</label>
+                    <select id="pagamento" required>
+                        <option value="">Selecione</option>
+                        <option value="cartao">Cartão de Crédito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="transferencia">Transferência Bancária</option>
+                    </select>
+                </div>
+                <button type="submit">Confirmar Compra</button>
+            </form>
+            <div id="mensagem" style="display:none; margin-top: 20px; color: green;">
+                Encomenda realizada! Aguarde confirmação de pagamento.
+            </div>
         </div>
     </main>
 

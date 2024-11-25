@@ -6,12 +6,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px white;
 }
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
 .form-group {
     margin-bottom: 15px;
     color: #ddd;
@@ -53,4 +47,12 @@ button:hover {
 .register-link a {
     color: white;
     text-decoration: none;
+}
+h1 {
+    text-align: center;
+    color: white; /* Garante que o texto do título seja branco */
+    
+}
+h1 {
+    color: white !important; /* Força a cor branca */
 }
