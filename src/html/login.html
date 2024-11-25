@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Loja Online - Produtos</title>
+    <title>Loja Online - Login</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css"><!-- Novo CSS adicionado -->
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css"> <!-- Novo CSS adicionado -->
     <link rel="stylesheet" href="/src/assets/Styles/login.css"> <!-- Link para o CSS separado -->
 </head>
 
@@ -25,22 +23,21 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="menu-item">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">Sobre Nós <span class="arrow-down"></span></a>
+                    <a href="#" class="menu-item dropdown-toggle">Suporte <span class="arrow-down"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="equipa.html">Equipa</a></li>
                         <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="historia.html">História</a></li>
-                        <li><a href="portifolio.html">Portfólio</a></li>
                         <li><a href="politicas.html">Políticas de Privacidade</a></li>
                     </ul>
                 <li><a href="carrinho.html" class="menu-item">Carrinho</a></li>
                 <li class="dropdown">
                     <a href="#" class="menu-item dropdown-toggle">
                         <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
+                        Perfil <span class="arrow-down"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="register.html">Registrar</a></li>
+                        <li><a href="utilizador.html" class="menu-item">Minha Conta</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,24 +46,21 @@
     </header>
 
     <main>
-            </header>
-        
-            <main>
-                <div class="login-container">
-                    <h1>Login</h1>
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" placeholder="Digite seu email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha" required>
-                        </div>
-                        <button type="submit">Entrar</button>
-                        <p class="register-link">Não tem uma conta? <a href="register.html">Registrar</a></p>
-                    </form>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite seu email" required>
                 </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit">Entrar</button>
+                <p class="register-link">Não tem uma conta? <a href="register.html">Registrar</a></p>
+            </form>
+        </div>
     </main>
 
     <footer class="footer">
@@ -138,6 +132,17 @@
         </div>
     </footer>
 
-    <script src="/src/assets/js/script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Aqui você pode adicionar a lógica de autenticação (ex: verificar email e senha)
+            // Para fins de exemplo, vamos redirecionar diretamente.
+
+            // Se o login for bem-sucedido, redirecione para a página do utilizador
+            window.location.href = 'utilizador.html'; // Redireciona para a página de perfil
+        });
+    </script>
 </body>
+
 </html>

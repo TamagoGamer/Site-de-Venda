@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Loja Online - Produtos</title>
+    <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css"><!-- Novo CSS adicionado -->
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css"> <!-- Novo CSS adicionado -->
+    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
 </head>
 
 <body>
@@ -24,22 +23,21 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="menu-item">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">Sobre Nós <span class="arrow-down"></span></a>
+                    <a href="#" class="menu-item dropdown-toggle">Suporte <span class="arrow-down"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="equipa.html">Equipa</a></li>
                         <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="historia.html">História</a></li>
-                        <li><a href="portifolio.html">Portfólio</a></li>
                         <li><a href="politicas.html">Políticas de Privacidade</a></li>
                     </ul>
                 <li><a href="carrinho.html" class="menu-item">Carrinho</a></li>
                 <li class="dropdown">
                     <a href="#" class="menu-item dropdown-toggle">
                         <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
+                        Perfil <span class="arrow-down"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="register.html">Registrar</a></li>
+                        <li><a href="utilizador.html" class="menu-item">Minha Conta</a></li>
                     </ul>
                 </li>
             </ul>
@@ -55,35 +53,17 @@
                     <tr>
                         <th>Produto</th>
                         <th>Quantidade</th>
-                        <th>Preço</th>
+                        <th>Preço Unitário</th>
                         <th>Total</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Produto 1</td>
-                        <td>
-                            <input type="number" value="1" min="1" max="10">
-                        </td>
-                        <td>R$ 99,99</td>
-                        <td>R$ 99,99</td>
-                        <td><button class="remove-btn">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <td>Produto 2</td>
-                        <td>
-                            <input type="number" value="1" min="1" max="10">
-                        </td>
-                        <td>R$ 149,99</td>
-                        <td>R$ 149,99</td>
-                        <td><button class="remove-btn">Remover</button></td>
-                    </tr>
-                    <!-- Adicione mais produtos conforme necessário -->
+                <tbody id="carrinho-body">
+                    <!-- Os produtos serão adicionados aqui pelo JavaScript -->
                 </tbody>
             </table>
             <div class="carrinho-total">
-                <h2>Total: R$ 249,98</h2>
+                <h2>Total: R$ <span id="total-preco">0.00</span></h2>
                 <button class="checkout-btn">Finalizar Compra</button>
             </div>
         </div>
@@ -158,6 +138,63 @@
         </div>
     </footer>
 
-    <script src="/src/assets/js/script.js"></script>
+    <script>
+        // Simulação de produtos no carrinho (para teste)
+        const cart = [
+            { nome: "Produto 1", preco: 99.99, quantidade: 1 },
+            { nome: "Produto 2", preco: 149.99, quantidade: 1 }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const carrinhoBody = document.getElementById('carrinho-body');
+            const totalPrecoElement = document.getElementById('total-preco');
+
+            function atualizarCarrinho() {
+                carrinhoBody.innerHTML = '';
+                let total = 0;
+                cart.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.nome}</td>
+                        <td>
+                            <input type="number" value="${item.quantidade}" min="1" class="quantidade" data-preco="${item.preco}">
+                        </td>
+                        <td>R$ ${item.preco.toFixed(2)}</td>
+                        <td class="total">R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
+                        <td><button class="remove-btn">Remover</button></td>
+                    `;
+                    carrinhoBody.appendChild(row);
+                    total += item.preco * item.quantidade;
+                });
+                totalPrecoElement.textContent = `R$ ${total.toFixed(2)}`;
+            }
+
+            atualizarCarrinho();
+
+            carrinhoBody.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-btn')) {
+                    const productName = event.target.closest('tr').querySelector('td:first-child').textContent;
+                    const index = cart.findIndex(item => item.nome === productName);
+                    if (index !== -1) {
+                        cart.splice(index, 1);
+                        atualizarCarrinho();
+                    }
+                }
+            });
+
+            carrinhoBody.addEventListener('change', function(event) {
+                if (event.target.classList.contains('quantidade')) {
+                    const productName = event.target.closest('tr').querySelector('td:first-child').textContent;
+                    const quantidade = parseInt(event.target.value);
+                    const index = cart.findIndex(item => item.nome === productName);
+                    if (index !== -1) {
+                        cart[index].quantidade = quantidade;
+                        atualizarCarrinho();
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

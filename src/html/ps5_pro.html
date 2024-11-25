@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Loja Online - Produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - PS5 Pro</title>
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="/src/assets/Styles/styles.css"> <!-- Novo CSS adicionado -->
+    <link rel="stylesheet" href="/src/assets/Styles/ps5_pro.css"> <!-- Link para CSS específico, se necessário -->
 </head>
 
 <body>
@@ -46,53 +46,18 @@
     </header>
 
     <main>
-        <!-- Politicas de Privacidade -->
-        <div class="quadrados">
-            <div class="professor1">
-                <img src="/src/assets/img/Tendo formacao.jpg" alt="Professor 1">
-                <h2>Políticas de Privacidade</h2>
-                <p> 
-                    <h2>Introdução</h2>
-                    A sua privacidade é importante para nós. Esta Política de Privacidade explica como coletamos, usamos e protegemos as suas informações pessoais quando você utiliza nossos serviços.
-                    
-                    <h2>Coleta de Informações</h2>
-                    Coletamos informações pessoais que você nos fornece ao se inscrever, ao utilizar nossos serviços ou ao entrar em contato conosco. Isso pode incluir seu nome, e-mail, telefone e outras informações relevantes.
-                    
-                    <h2>Uso das Informações</h2>
-                    As informações coletadas são usadas para:
-                    
-                    Melhorar nossos serviços e personalizar a experiência do usuário.
-                    Enviar comunicações relevantes e atualizações sobre nossos produtos e serviços.
-                    Cumprir com obrigações legais e regulatórias.
-                    
-                    <h2>Proteção de Dados</h2>
-                    Implementamos medidas de segurança para proteger suas informações contra acesso não autorizado, divulgação ou destruição. No entanto, lembre-se de que nenhuma transmissão de dados pela internet é totalmente segura.
-                    
-                    <h2>Compartilhamento de Informações</h2>
-                    Não vendemos, trocamos ou alugamos suas informações pessoais a terceiros. Podemos compartilhar informações com parceiros de negócios apenas para fins específicos, sempre respeitando sua privacidade.
-                    
-                    <h2>Seus Direitos</h2>
-                    Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para isso, entre em contato conosco através das informações fornecidas abaixo.
-                
-                    <h2>Termos de Uso</h2>
-                    Aceitação dos Termos
-                    Ao acessar ou utilizar nossos serviços, você concorda em cumprir estes Termos de Uso. Se você não concorda, não deve utilizar nossos serviços.
-                    
-                    <h2>Uso dos Serviços</h2>
-                    Você se compromete a usar nossos serviços apenas para fins legais e de acordo com todas as leis aplicáveis. É proibido o uso dos nossos serviços para atividades fraudulentas, difamatórias ou que violem os direitos de terceiros.
-                    
-                    <h2>Propriedade Intelectual</h2>
-                    Todos os conteúdos, marcas registradas e materiais disponíveis em nossos serviços são de propriedade exclusiva da nossa empresa ou de seus licenciantes. É proibida a reprodução, distribuição ou uso não autorizado.
-                    
-                    <h2>Limitação de Responsabilidade</h2>
-                    Não nos responsabilizamos por danos diretos, indiretos, incidentais ou consequenciais que possam ocorrer devido ao uso ou incapacidade de uso dos nossos serviços.
-                    
-                    <h2>Alterações nos Termos</h2>
-                    Reservamo-nos o direito de modificar estes Termos de Uso e a Política de Privacidade a qualquer momento. Recomendamos que você revise periodicamente estas políticas para se manter informado sobre como protegemos suas informações.
-                    
-                    <h2>Contato</h2>
-                    Para dúvidas sobre nossa Política de Privacidade ou Termos de Uso, entre em contato conosco através do e-mail [suporte@autoescolapw.com].</p>
-                <p class="descricao"></p>
+        <div class="produto-container">
+            <h1>PS5 Pro</h1>
+            <div class="produto-detalhes">
+                <img src="https://www.worten.pt/i/33af6ab355e24d992f55942ba1817770150cc7d4" alt="PS5 Pro" class="produto-imagem">
+                <div class="detalhes">
+                    <h2>Descrição Detalhada</h2>
+                    <p>O PS5 Pro oferece uma experiência de jogo imersiva com gráficos de última geração e desempenho superior. Com uma biblioteca de jogos incríveis e recursos inovadores, é a escolha perfeita para os amantes de jogos.</p>
+                    <p><strong>Preço:</strong> R$ 99,99</p>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" value="1" min="1" class="quantidade">
+                    <button class="add-to-cart" data-nome="PS5 Pro" data-preco="99.99">Adicionar ao Carrinho</button>
+                </div>
             </div>
         </div>
     </main>
@@ -165,7 +130,18 @@
             <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
-    <script src="/src/assets/js/script.js"></script>
+
+    <script>
+        document.querySelector('.add-to-cart').addEventListener('click', () => {
+            const productName = document.querySelector('.add-to-cart').getAttribute('data-nome');
+            const productPrice = parseFloat(document.querySelector('.add-to-cart').getAttribute('data-preco'));
+            const quantity = parseInt(document.getElementById('quantidade').value);
+
+            // Adiciona o produto ao carrinho
+            const totalPrice = productPrice * quantity;
+            alert(`${productName} foi adicionado ao carrinho! Preço total: R$ ${totalPrice.toFixed(2)}`);
+        });
+    </script>
 </body>
 
 </html>

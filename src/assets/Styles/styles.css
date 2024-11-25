@@ -255,22 +255,53 @@ h3 {
 
 .categoria {
     margin: 20px; /* Espaço entre os círculos */
+    text-align: center; /* Centraliza o texto abaixo da imagem */
 }
 
-.circle {
+.circle-image {
     width: 100px; /* Largura do círculo */
     height: 100px; /* Altura do círculo */
-    border-radius: 50%; /* Faz o círculo */
-    background-color: #31503c; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    display: flex; /* Usado para centralizar o texto */
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-    text-decoration: none; /* Remove o sublinhado */
-    font-size: 1.2em; /* Tamanho da fonte */
-    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+    border-radius: 50%; /* Faz a imagem ser circular */
+    object-fit: cover; /* Corta a imagem para preencher o círculo */
+}
+
+.categoria p {
+    margin-top: 10px; /* Espaço acima do texto */
+    font-size: 1em; /* Tamanho da fonte do texto */
+    color: #31503c; /* Cor do texto */
 }
 
 .circle:hover {
     background-color: #2a3d30; /* Cor de fundo ao passar o mouse */
+}
+
+.dropdown {
+    position: relative; /* Necessário para o posicionamento do submenu */
+}
+
+.dropdown-menu {
+    display: none; /* Esconde o submenu por padrão */
+    position: absolute; /* Para posicionar o submenu em relação ao item pai */
+    top: 100%; /* Coloca o submenu abaixo do item pai */
+    left: 0; /* Alinha à esquerda do item pai */
+    background-color: white; /* Cor de fundo do submenu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para o submenu */
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostra o submenu quando o item pai é hover */
+}
+
+.dropdown-menu li {
+    padding: 10px; /* Espaçamento interno dos itens do submenu */
+}
+
+.dropdown-menu li a {
+    color: #333; /* Cor do texto do submenu */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
 }
