@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2 {
-    color: white; 
+    color: rgb(0, 0, 0); 
 }
 
 a {
@@ -45,6 +45,27 @@ a {
     margin: 20px 0;
 }
 
+.produtos-destaque-texto {
+    max-width: 1200px; /* Largura máxima para telas grandes */
+    width: 100%; /* Largura responsiva */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px 0 0 0; /* Adiciona um pouco de espaçamento */
+    text-align: center; /* Centraliza o texto */
+}
+
+.produtos-destaque-texto h2 {
+    font-size: 2.5rem; /* Tamanho da fonte responsivo */
+    color: #31503c; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Adicione media queries para ajustar o tamanho da fonte em telas menores */
+@media (max-width: 768px) {
+    .produtos-destaque-texto h2 {
+        font-size: 2rem; /* Tamanho da fonte menor em telas pequenas */
+    }
+}
+
 /* Produtos em Destaque */
 .produtos-destaque {
     max-width: 1200px;
@@ -53,6 +74,14 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    text-align: center; /* Centraliza o texto dentro da seção */
+    margin: 20px 0; /* Adiciona espaço acima e abaixo da seção */
+}
+
+.produtos-destaque h2 {
+    font-size: 2em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #31503c; /* Altere a cor conforme desejado */
+    margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
 .produto {
@@ -129,27 +158,25 @@ button:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
     .produtos-destaque {
         grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
     }
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .product {
+
     background: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -159,22 +186,27 @@ body {
     text-align: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .product img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
+
 .product h3 {
     font-size: 1.2em;
     margin: 10px 0;
 }
+
 .product p {
     color: #555;
 }
+
 .product .price {
     font-size: 1.5em;
     color: #e74c3c;
 }
+
 .product button {
     background-color: #ff6400;
     color: white;
@@ -183,11 +215,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .product button:hover {
     background-color: #ff6400;
 }
-
-
 
 .flex-container {
     display: flex;
@@ -206,8 +237,40 @@ body {
     justify-content: space-around; /* Espaço entre os produtos */
 }
 
-
 h3 {
     font-weight: bold; /* Deixa o texto em negrito */
     color: #ff6400; /* Define a cor do texto como preta */
+}
+
+.categorias {
+    text-align: center; /* Centraliza o texto */
+    margin: 40px 0; /* Espaço acima e abaixo */
+}
+
+.categorias-container {
+    display: flex; /* Alinha os círculos em linha */
+    justify-content: center; /* Centraliza os círculos */
+    flex-wrap: wrap; /* Permite que os círculos se movam para a próxima linha se necessário */
+}
+
+.categoria {
+    margin: 20px; /* Espaço entre os círculos */
+}
+
+.circle {
+    width: 100px; /* Largura do círculo */
+    height: 100px; /* Altura do círculo */
+    border-radius: 50%; /* Faz o círculo */
+    background-color: #31503c; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    display: flex; /* Usado para centralizar o texto */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 1.2em; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.circle:hover {
+    background-color: #2a3d30; /* Cor de fundo ao passar o mouse */
 }
