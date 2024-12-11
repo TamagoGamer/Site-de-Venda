@@ -1,364 +1,175 @@
-/* Reset global */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Ajustes para o conteúdo principal */
-main {
-    flex: 1 0 auto;
-    width: 100%;
-    padding: 20px;
-    overflow-x: hidden;
-    display: flex; /* Ativa o layout flexível */
-    justify-content: space-between;
-    margin: 20px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-}
-
-/* Ajustes para todas as seções */
-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 20px auto;
-    padding: 0 15px;
-}
-
-/* Ajustes para imagens */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Responsividade para seções específicas */
-@media (max-width: 768px) {
-    /* Seção de Boas-vindas */
-    .welcome {
-        padding: 20px 15px;
-    }
-
-    .welcome h1 {
-        font-size: 24px;
-    }
-
-    .welcome p {
-        font-size: 16px;
-    }
-
-    /* Grade de cursos */
-    .course-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .course-item {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    /* Por que nos escolher */
-    .why-choose-us ul {
-        padding-left: 20px;
-    }
-
-    /* Depoimentos */
-    .testimonial-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .testimonial {
-        width: 100%;
-    }
-
-    /* Dicas de Segurança */
-    .safety-tips ul {
-        padding-left: 20px;
-    }
-}
-
-/* Ajustes adicionais para telas muito pequenas */
-@media (max-width: 480px) {
-    main {
-        padding: 10px;
-        margin-top: 60px; /* Ajuste este valor conforme necessário */
-    }
-
-    section {
-        padding: 0 10px;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 20px;
-        text-align: justify;
-    }
-
-    p {
-        font-size: 14px;
-    }
-}
-
-/* Divisão para os professores */
-.professor1 .professor2{
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px;
-    width: calc(30% - 40px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.quadrados {
-    display: flex;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
-    width: 80%;
-            margin: 20px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-}
-
-.quadrados img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    idth: 100%; /* Ajusta a largura ao contêiner */
-    height: 500px; /* Altura fixa */
-    object-fit: cover;
-    margin: 20px auto;
-}
-
-.quadrados h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    margin: 20px auto;
-}
-
-.quadrados p {
-    margin: 10px 0;
-    text-align: justify;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-}
-/* Index */
-.curso-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.curso-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.curso-header h1 {
-    color: #31503c;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-/* Documentação nescessarias para o CursoD */
-.documentacao {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.documentacao h2 {
-    color: #31503c;
-    margin-bottom: 15px;
-}
-
-.documentacao ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.documentacao li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.documentacao li:before {
-    content: "•";
-    color: #31503c;
-    font-weight: bold;
-    position: absolute;
-    left: -15px;
-}
-
-/* Descrições dos Cursos */
-.descricao-curso {
-    line-height: 1.6;
-}
-
-.descricao-curso h2, 
-.descricao-curso h3 {
-    color: #31503c;
-    margin: 25px 0 15px 0;
-}
-
-.descricao-curso p {
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-.info-box {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.info-box ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-/* Conclusão */
-.conclusao {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
-}
-
-.conclusao p {
-    text-align: center;
-    font-size: 1.2em;
-    color: #31503c;
-    font-weight: bold;
-}
-
-/* Responsividade para  dispositivos móveis */
-@media (max-width: 768px) {
-    .curso-container {
-        padding: 15px;
-    }
-
-    .curso-header h1 {
-        font-size: 2em;
-    }
-
-    .descricao-curso {
-        font-size: 1.2em;
-    }
-
-    .info-box {
-        padding: 15px;
-    }
-
-    .conclusao {
-        padding: 15px;
-    }
-}
 /* Estilos para o contêiner do carrossel */
 .carousel {
-    position: relative;  
-    max-width: 1500px;  /* Define a largura máxima do carrossel (ajustável conforme necessário) */
-    margin: auto;  /* Centraliza o carrossel horizontalmente */
-    overflow: hidden;  
+    position: relative;
+    max-width: 1500px;
+    /* Define a largura máxima do carrossel (ajustável conforme necessário) */
+    margin: auto;
+    /* Centraliza o carrossel horizontalmente */
+    overflow: hidden;
 }
 
 /* Estilos para o contêiner das imagens do carrossel */
 .carousel-images {
-    display: flex;  
-    transition: transform 0.5s ease; 
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 /* Estilos para cada slide individual */
 .slide {
-    min-width: 100%;  
-    transition: opacity 0.5s ease;  
+    min-width: 100%;
+    transition: opacity 0.5s ease;
 }
 
 /* Estilos para as imagens dentro do carrossel */
 .carousel-images img {
-    max-width: 100%;  /
-    border-radius: 5px; 
-    margin: 20px auto;  
-    height: 400px;  
-    object-fit: cover;  
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 /* Estilos para os inputs de rádio (usados para controlar a navegação) */
 input[type="radio"] {
-    display: none;  
+    display: none;
 }
 
 /* Estilos para o carrossel quando o primeiro slide é selecionado */
-#slide1:checked ~ .carousel-images {
-    transform: translateX(0);  
+#slide1:checked~.carousel-images {
+    transform: translateX(0);
 }
 
 /* Estilos para o carrossel quando o segundo slide é selecionado */
-#slide2:checked ~ .carousel-images {
-    transform: translateX(-100%);  
+#slide2:checked~.carousel-images {
+    transform: translateX(-100%);
 }
 
 /* Estilos para o carrossel quando o terceiro slide é selecionado */
-#slide3:checked ~ .carousel-images {
-    transform: translateX(-200%);  
+#slide3:checked~.carousel-images {
+    transform: translateX(-200%);
 }
 
 /* Estilos para a navegação (pontos) abaixo do carrossel */
 .carousel-nav {
-    text-align: center;  
+    text-align: center;
     margin-top: 10px;
 }
 
 /* Estilos para cada ponto de navegação */
 .carousel-dot {
-    cursor: pointer;  
-    display: inline-block;  
-    width: 15px;  
-    height: 15px; 
-    margin: 0 5px;  
-    background-color: #bbb; 
-    border-radius: 50%; 
-    transition: background-color 0.3s;  
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
 /* Estilos para os pontos de navegação quando um slide é selecionado */
-#slide1:checked ~ .carousel-nav label[for="slide1"],
-#slide2:checked ~ .carousel-nav label[for="slide2"],
-#slide3:checked ~ .carousel-nav label[for="slide3"] {
-    background-color: #717171; 
+#slide1:checked~.carousel-nav label[for="slide1"],
+#slide2:checked~.carousel-nav label[for="slide2"],
+#slide3:checked~.carousel-nav label[for="slide3"] {
+    background-color: #717171;
+}
+
+@media (max-width: 767px) {
+
+    /* Estilos para o contêiner do carrossel */
+    .carousel {
+        position: flex;
+        max-width: 1500px;
+        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
+        margin: auto;
+        /* Centraliza o carrossel horizontalmente */
+        justify-content: center;
+    }
+
+    /* Estilos para o contêiner das imagens do carrossel */
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    /* Estilos para cada slide individual */
+    .slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Estilos para as imagens dentro do carrossel */
+    .carousel-images img {
+        max-width: 100%;
+        border-radius: 5px;
+        object-fit: fill;
+        height: 150px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    /* Estilos para o contêiner do carrossel */
+    .carousel {
+        position: flex;
+        max-width: 2000px;
+        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
+        margin: auto;
+        /* Centraliza o carrossel horizontalmente */
+        justify-content: center;
+    }
+
+    /* Estilos para o contêiner das imagens do carrossel */
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    /* Estilos para cada slide individual */
+    .slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Estilos para as imagens dentro do carrossel */
+    .carousel-images img {
+        max-width: 100%;
+        border-radius: 5px;
+        object-fit: fill;
+        height: 220px;
+    }
+}
+
+@media (max-width: 412px) {
+
+    /* Estilos para o contêiner do carrossel */
+    .carousel {
+        position: flex;
+        max-width: 2000px;
+        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
+        margin: auto;
+        /* Centraliza o carrossel horizontalmente */
+        justify-content: center;
+    }
+
+    /* Estilos para o contêiner das imagens do carrossel */
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    /* Estilos para cada slide individual */
+    .slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Estilos para as imagens dentro do carrossel */
+    .carousel-images img {
+        max-width: 100%;
+        border-radius: 5px;  
+        object-fit: fill;
+        height: 130px;
+    }
 }

@@ -173,8 +173,49 @@ html, body {
     background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
 }
 
+.InputContainer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    padding-left: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+  
+  .input {
+    width: 550px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    caret-color: rgb(255, 81, 0);
+  }
+  
+  .labelforsearch {
+    cursor: pointer;
+    padding: 0px 12px;
+  }
+  
+  .searchIcon {
+    width: 13px;
+  }
+  
+  .border {
+    height: 40%;
+    width: 1.3px;
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .searchIcon path {
+    fill: rgb(114, 114, 114);
+  }
+
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 540px) {
     .navbar {
         position: relative;
         padding: 10px;
@@ -189,7 +230,7 @@ html, body {
     }
 
     .nav-links {
-        display: flex;
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -201,13 +242,133 @@ html, body {
     }
 
     .nav-links.show {
-        display: none;
-        z-index: 1000; /* Um valor alto para garantir que fique na frente */
+        display: block;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: white;
+        padding: 0;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-item {
+        padding: 15px 20px;
+        font-size: 16px; /* Ajustado para mobile */
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: #f5f5f5;
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    .dropdown-toggle {
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .InputContainer {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: fill;
+        cursor: pointer;
+        padding-left: 15px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+      }
+      
+      .input {
+        width: 80px;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 0.9em;
+        caret-color: rgb(255, 81, 0);
+      }
+      
+      .labelforsearch {
+        cursor: pointer;
+        padding: 0px 12px;
+      }
+      
+      .searchIcon {
+        width: 13px;
+      }
+      
+      .border {
+        height: 40%;
+        width: 1.3px;
+        background-color: rgb(223, 223, 223);
+      }
+      
+      .searchIcon path {
+        fill: rgb(114, 114, 114);
+      }
+}
+
+@media (max-width: 950px) {
+    .navbar {
+        position: relative;
+        padding: 10px;
+    }
+
+    .logo span {
+        font-size: 18px; /* Ajustado para mobile */
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 0;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 0;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     .nav-links li {
@@ -256,4 +417,45 @@ html, body {
         font-size: 24px;
         padding: 10px;
     }
+
+    .InputContainer {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        padding-left: 15px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+      }
+      
+      .input {
+        width: 250px;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 0.9em;
+        caret-color: rgb(255, 81, 0);
+      }
+      
+      .labelforsearch {
+        cursor: pointer;
+        padding: 0px 12px;
+      }
+      
+      .searchIcon {
+        width: 13px;
+      }
+      
+      .border {
+        height: 40%;
+        width: 1.3px;
+        background-color: rgb(223, 223, 223);
+      }
+      
+      .searchIcon path {
+        fill: rgb(114, 114, 114);
+      }
 }
