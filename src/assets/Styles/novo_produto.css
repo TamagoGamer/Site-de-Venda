@@ -35,3 +35,14 @@ button {
     border: none;
     border-radius: 
 }
+.filters, .sort {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters input, .sort select {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
