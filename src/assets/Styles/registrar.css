@@ -1,0 +1,40 @@
+
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #ff1f2b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e60000; /* Cor um pouco mais escura ao passar o mouse */
+}
+
+p {
+    text-align: center;
+}
+
+p a {
+    color: #ff1f2b;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

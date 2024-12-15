@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #ff1f2b; /* Cor para destacar a mensagem */
+}
+
+.access-denied-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto */
+}
+
+p {
+    margin: 10px 0;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff1f2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-home:hover {
+    background-color: #e60000; /* Cor um pouco mais escura ao passar o mouse */
+}

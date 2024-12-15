@@ -1,0 +1,67 @@
+  h1 {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .pie-chart-wrapper {
+    display: flex;
+    justify-content: space-around; /* Distribui os gráficos uniformemente */
+    flex-wrap: wrap; /* Permite que os gráficos se movam para a linha seguinte se não houver espaço suficiente */
+}
+  
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(
+      #4CAF50 0% 40%,   /* Segmento verde */
+      #FF9800 40% 70%,   /* Segmento laranja */
+      #2196F3 70% 100%   /* Segmento azul */
+    );
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .pie1 {
+    background: conic-gradient(
+      #4CAF50 0% 50%,   /* 50% verde */
+      #FF9800 50% 90%,   /* 40% laranja */
+      #2196F3 90% 100%   /* 10% azul */
+    );
+  }
+  
+  .pie2 {
+    background: conic-gradient(
+      #FF9800 0% 30%,   /* 30% laranja */
+      #4CAF50 30% 60%,   /* 30% verde */
+      #2196F3 60% 100%   /* 40% azul */
+    );
+  }
+  
+  .pie3 {
+    background: conic-gradient(
+      #2196F3 0% 25%,   /* 25% azul */
+      #4CAF50 25% 50%,   /* 25% verde */
+      #FF9800 50% 75%,   /* 25% laranja */
+      #9C27B0 75% 100%   /* 25% roxo */
+    );
+  }
+  
+  .pie-chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .pie-chart-container {
+        width: 100%; /* Cada gráfico ocupará 100% da largura em telas menores */
+        margin-bottom: 20px; /* Espaço entre os gráficos */
+    }
+  
+    .pie-chart {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  

@@ -43,38 +43,52 @@
                     <ul class="dropdown-menu">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="registrar.html">Registrar</a></li>
-                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a>  </ul>
+                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a>
+                    </ul>
                 </li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
-
+    <br>
+    <br>
+    <br>
     <main>
-        <div class="carousel">
-            <input type="radio" name="slides" id="slide1" checked>
-            <input type="radio" name="slides" id="slide2">
-            <input type="radio" name="slides" id="slide3">
-
-            <div class="carousel-images">
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/02335003e55fe8560e3377a0d00a3aa7982791a4" alt="Imagem 1">
-                </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/ae1bb9277be99912950b99e96d91e7dba91ae08b" alt="Imagem 2">
-                </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/870fcf7bc22a2f77e371868910b978690fe36355" alt="Imagem 3">
-                </div>
+        <div class="account-container">
+            <h1>Minha Conta</h1>
+            <br>
+            <button id="toggleAccount" class="toggle-button">Mudar para Admin</button>
+            <div id="userInfo" class="account-info">
+                <h2>Informações Pessoais</h2>
+                <br>
+                <p><strong>Nome:</strong> Nome do Usuário</p>
+                <p><strong>Email:</strong> usuario@example.com</p>
+                <button class="edit-button">Editar Informações</button>
+                <br>
             </div>
-
-            <div class="carousel-nav">
-                <label for="slide1" class="carousel-dot"></label>
-                <label for="slide2" class="carousel-dot"></label>
-                <label for="slide3" class="carousel-dot"></label>
+            <div id="adminInfo" class="account-info" style="display: none;">
+                <br>
+                <h2>Informações de Admin</h2>
+                <p><strong>Admin ID:</strong> 001</p>
+                <p><strong>Email:</strong> admin@example.com</p>
+                <br>
+                <button><a href="admin.html" class="h1">Gerenciamento</a></button>
+                <br>
             </div>
+            <div class="order-history">
+                <br>
+                <h2>Histórico de Pedidos</h2>
+                <ul>
+                    <li>Pedido #12345 - 20/01/2024 - Status: Enviado</li>
+                    <li>Pedido #12346 - 15/01/2024 - Status: Entregue</li>
+                    <li>Pedido #12347 - 10/01/2024 - Status: Em Processamento</li>
+                </ul>
+            </div>
+        </div>
     </main>
-
+    <br>
+    <br>
+    <br>
     <footer class="footer">
         <div class="footer-content">
             <!-- Formulário de contato -->
@@ -160,6 +174,24 @@
                 cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
                 alert(`${productName} foi adicionado ao carrinho!`);
             });
+        });
+    </script>
+    <script src="/src/assets/js/navlink.js"></script>
+    <script>
+        const toggleButton = document.getElementById('toggleAccount');
+        const userInfo = document.getElementById('userInfo');
+        const adminInfo = document.getElementById('adminInfo');
+
+        toggleButton.addEventListener('click', () => {
+            if (userInfo.style.display === 'none') {
+                userInfo.style.display = 'block';
+                adminInfo.style.display = 'none';
+                toggleButton.textContent = 'Mudar para Admin';
+            } else {
+                userInfo.style.display = 'none';
+                adminInfo.style.display = 'block';
+                toggleButton.textContent = 'Mudar para Usuário';
+            }
         });
     </script>
 </body>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>y Sweet Pc</title>
+    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css" >
     <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
@@ -43,38 +45,96 @@
                     <ul class="dropdown-menu">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="registrar.html">Registrar</a></li>
-                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a>  </ul>
+                        <li><a href="utilizador.html" class="menu-item">Minha Conta</a></li>
+                        <li><a href="admin.html" class="menu-item">Admin</a></li>
+                    </ul>
                 </li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
-
+        <br>
+        <br>
+        <br>
     <main>
-        <div class="carousel">
-            <input type="radio" name="slides" id="slide1" checked>
-            <input type="radio" name="slides" id="slide2">
-            <input type="radio" name="slides" id="slide3">
-
-            <div class="carousel-images">
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/02335003e55fe8560e3377a0d00a3aa7982791a4" alt="Imagem 1">
+        <div class="cart-container">
+            <h1>Carrinho de Compras</h1>
+            <table>
+                <thead>
+                    <br>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="https://via.placeholder.com/100" alt="Produto 1">
+                                <span>PS5</span>
+                            </div>
+                        </td>
+                        <td>€199,99</td>
+                        <td>
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>€199,99</td>
+                        <td><button>Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="https://via.placeholder.com/100" alt="Produto 2">
+                                <span>AirPods</span>
+                            </div>
+                        </td>
+                        <td>€299,99</td>
+                        <td>
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>€299,99</td>
+                        <td><button>Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="https://via.placeholder.com/100" alt="Produto 3">
+                                <span>Tv 55" 4K</span>
+                            </div>
+                        </td>
+                        <td>€399,99</td>
+                        <td>
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>€399,99</td>
+                        <td><button>Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <br>
+                <h2>Total: €899,97</h2><!-- Seção de Métodos de Pagamento -->
+                <div class="payment-methods">
+                    <div class="payment-icons">
+                        <img src="/src/assets/img/visa.png" alt="Visa">
+                        <img src="/src/assets/img/multibanco.png" alt="MasterCard">
+                        <img src="/src/assets/img/pay2.png" alt="PayPal">
+                        <img src="/src/assets/img/mbway.png" alt="American Express">
+                    </div>
                 </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/ae1bb9277be99912950b99e96d91e7dba91ae08b" alt="Imagem 2">
-                </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/870fcf7bc22a2f77e371868910b978690fe36355" alt="Imagem 3">
-                </div>
+                <br>
+                <button>Finalizar Compra</button>
             </div>
-
-            <div class="carousel-nav">
-                <label for="slide1" class="carousel-dot"></label>
-                <label for="slide2" class="carousel-dot"></label>
-                <label for="slide3" class="carousel-dot"></label>
-            </div>
+        </div>
     </main>
-
+    <br>
+    <br>
+    <br>
     <footer class="footer">
         <div class="footer-content">
             <!-- Formulário de contato -->

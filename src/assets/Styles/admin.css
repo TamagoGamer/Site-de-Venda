@@ -1,0 +1,105 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    background-color: #ff1f2b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-card h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .product-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .button {
+    background-color:#ff1f2b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 5px;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Filtro e Barra de Ações */
+  .filters, .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+  }
+  
+  .filters input, .filters select {
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+    margin-right: 10px;
+  }
+  .actions button {
+    width: auto;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .filters, .actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filters input, .filters select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

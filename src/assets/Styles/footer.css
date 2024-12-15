@@ -2,10 +2,11 @@
 
 /* Outras regras de estilo para o footer, se necessário */
 .footer {
-    background-color: #ff6400; /* Cor de fundo do footer */
+    background-color: #ff1f2b; /* Cor de fundo do footer */
     color: white; /* Cor do texto do footer */
     padding: 20px 0;
     width: 100%;
+    text-align: center;
 }
 .footer-content {
     max-width: 1200px;
@@ -42,7 +43,7 @@
 
 .contact-form button {
     background-color: white;
-    color: #ff6400;
+    color: #ff1f2b;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;

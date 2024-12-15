@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>y Sweet Pc</title>
+    <link rel="stylesheet" href="/src/assets/Styles/registrar.css">
     <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
@@ -43,38 +44,42 @@
                     <ul class="dropdown-menu">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="registrar.html">Registrar</a></li>
-                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a>  </ul>
+                        <li><a href="utilizador.html" class="menu-item">Minha Conta</a></li>
+                        <li><a href="acesso_negado.html" class="menu-item">Admin</a></li>
+                    </ul>
                 </li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">☰</div>
         </nav>
     </header>
-
+    <br>
+    <br>
+    <br>
     <main>
-        <div class="carousel">
-            <input type="radio" name="slides" id="slide1" checked>
-            <input type="radio" name="slides" id="slide2">
-            <input type="radio" name="slides" id="slide3">
-
-            <div class="carousel-images">
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/02335003e55fe8560e3377a0d00a3aa7982791a4" alt="Imagem 1">
+        <div class="register-container">
+            <h1>Registrar</h1>
+            <br>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Nome Completo" required>
                 </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/ae1bb9277be99912950b99e96d91e7dba91ae08b" alt="Imagem 2">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
                 </div>
-                <div class="slide">
-                    <img src="https://www.worten.pt/i/870fcf7bc22a2f77e371868910b978690fe36355" alt="Imagem 3">
+                <div class="form-group">
+                    <input type="password" placeholder="Senha" required>
                 </div>
-            </div>
-
-            <div class="carousel-nav">
-                <label for="slide1" class="carousel-dot"></label>
-                <label for="slide2" class="carousel-dot"></label>
-                <label for="slide3" class="carousel-dot"></label>
-            </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirmar Senha" required>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+            <p>Já tem uma conta? <a href="login.html">Login</a></p>
+        </div>
     </main>
-
+    <br>
+    <br>
+    <br>
     <footer class="footer">
         <div class="footer-content">
             <!-- Formulário de contato -->

@@ -1,0 +1,63 @@
+
+
+.login-container, .account-container, .cart-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #ff1f2b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+.payment-methods {
+    margin-top: 20px;
+    text-align: center; /* Centraliza o texto e os ícones */
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.payment-icons img {
+    width: 50px; /* Largura fixa para os ícones */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste ao espaço sem distorção */
+}
+
+button:hover {
+    background-color
+
+    .cart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+}    
