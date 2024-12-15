@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Sweet Pc</title>
+    <link rel="stylesheet" href="/src/assets/Styles/categoria.css">
+    <link rel="stylesheet" href="/src/assets/Styles/admin.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <main>
+        <section class="actions">
+            <button id="add-category-btn" class="btn add-btn">Adicionar Categoria +</button>
+        </section>
+
+        <section class="category-list">
+            <div class="category-item">
+                <h2>Eletrônicos</h2>
+                <p>Produtos como celulares, laptops e tablets.</p>
+                <span>15 produtos</span>
+                <div class="category-actions">
+                    <button class="btn edit-btn">Editar</button>
+                    <button class="btn delete-btn">Excluir</button>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <h2>Roupas</h2>
+                <p>Moda masculina, feminina e infantil.</p>
+                <span>25 produtos</span>
+                <div class="category-actions">
+                    <button class="btn edit-btn">Editar</button>
+                    <button class="btn delete-btn">Excluir</button>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <h2>Livros</h2>
+                <p>Livros físicos e digitais.</p>
+                <span>30 produtos</span>
+                <div class="category-actions">
+                    <button class="btn edit-btn">Editar</button>
+                    <button class="btn delete-btn">Excluir</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Adicionar Categoria -->
+    <div id="modal-add" class="modal">
+        <div class="modal-content">
+            <h2>Adicionar Categoria</h2>
+            <form>
+                <label for="category-name">Nome:</label>
+                <input type="text" id="category-name" placeholder="Nome da Categoria" required>
+                
+                <label for="category-desc">Descrição:</label>
+                <textarea id="category-desc" placeholder="Descrição da Categoria" required></textarea>
+                
+                <button type="submit" class="btn save-btn">Salvar</button>
+                <button type="button" class="btn close-btn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script>
+        // Função para carregar o conteúdo de um arquivo HTML
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        // Carregar a navbar e o rodapé
+        loadHTML('navbar-container', 'navbar_admin.html');
+        loadHTML('footer-container', 'footer_admin.html');
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Sweet Pc</title>
+    <link rel="stylesheet" href="/src/assets/Styles/user.css">
+    <link rel="stylesheet" href="/src/assets/Styles/admin.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <br>
+    <br>
+    <!-- Barra de Pesquisa e Filtros -->
+    <section class="search-filter">
+        <input type="text" id="search-bar" placeholder="Pesquisar por nome ou e-mail...">
+        <select id="status-filter">
+            <option value="">Filtrar por Status</option>
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+        </select>
+        <button class="btn search-btn">Pesquisar</button>
+    </section>
+
+    <!-- Tabela de Utilizadores -->
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Data de Registo</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>joao@email.com</td>
+                    <td>2024-01-10</td>
+                    <td><span class="status ativo">Ativo</span></td>
+                    <td>
+                        <button class="btn toggle-btn inativo">Desativar</button>
+                        <a href="info_usuario.html"><button class="btn details-btn">Ver Detalhes</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maria Santos</td>
+                    <td>maria@email.com</td>
+                    <td>2024-02-15</td>
+                    <td><span class="status inativo">Inativo</span></td>
+                    <td>
+                        <button class="btn toggle-btn ativo">Ativar</button>
+                        <a href="info_usuario2.html"><button class="btn details-btn">Ver Detalhes</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pedro Costa</td>
+                    <td>pedro@email.com</td>
+                    <td>2024-03-20</td>
+                    <td><span class="status ativo">Ativo</span></td>
+                    <td>
+                        <button class="btn toggle-btn inativo">Desativar</button>
+                        <a href="info_usuario3.html"><button class="btn details-btn">Ver Detalhes</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <br>
+    <br>
+    <div id="footer-container"></div>
+    <script>
+        // Função para carregar o conteúdo de um arquivo HTML
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        // Carregar a navbar e o rodapé
+        loadHTML('navbar-container', 'navbar_admin.html');
+        loadHTML('footer-container', 'footer_admin.html');
+    </script>
+</body>
+</html>

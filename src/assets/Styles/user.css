@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff1f2b;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Barra de Pesquisa e Filtros */
+.search-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.search-filter input,
+.search-filter select,
+.search-filter button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-btn {
+    background-color: #ff1f2b;
+    color: white;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #e61924;
+}
+
+/* Tabela */
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff1f2b;
+    color: white;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.ativo {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status.inativo {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Botões na Tabela */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.toggle-btn.ativo {
+    background-color: #4CAF50;
+}
+
+.toggle-btn.inativo {
+    background-color: #f44336;
+}
+
+.details-btn {
+    background-color: #2196F3;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .search-filter {
+        flex-direction: column;
+    }
+}

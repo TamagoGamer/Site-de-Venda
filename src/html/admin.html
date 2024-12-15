@@ -15,41 +15,7 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="/src/assets/img/descarregar.jpg"
-                        alt="LOGO">
-                    <span>My Sweet Pc</span>
-                </a>
-            </div>
-            <div class="InputContainer">
-                <input type="text" name="text" class="input" id="input" placeholder="Search">
-                <label for="input" class="labelforsearch">
-                    <svg viewBox="0 0 512 512" class="searchIcon">
-                        <path
-                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
-                        </path>
-                    </svg>
-                </label>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="carrinho.html" class="menu-item"><img src="/src/assets/img/cart-shopping-solid.svg" alt="Perfil" style="width: 24px; height: 24px;"></a></li>
-                <li class="dropdown">
-                    <a href="#" class="menu-item dropdown-toggle">
-                        <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
-                        Perfil <span class="arrow-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="registrar.html">Registrar</a></li>
-                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a></li>
-                        <li><a href="admin.html" class="menu-item">Admin</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">☰</div>
-        </nav>
+        <div id="navbar-container"></div>
     </header>
     <br>
     <br>
@@ -103,6 +69,8 @@
 
                   <!-- Ações -->
                   <div class="actions">
+                    <a href="categorias.html"><button class="button">Editar categorias</button></a>
+                    <a href="usuarios.html"><button class="button">Gestão de usuarios</button></a>
                     <a href="novo_produto.html"><button class="button">Adicionar Produto +</button></a>
                     <button class="button" id="save-changes">Guardar alterações</button>
                   </div>
@@ -208,40 +176,7 @@
                                 </div>
                 </div>
     </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-                    <!-- Horários de Funcionamento no Footer -->
-                    <div class="footer-hours">
-                        <h4>Horário e contacto de Funcionamento do Suportre</h4>
-                        <div class="hours-item">
-                            <div class="clock-icon">
-                                <img src="/src/assets/img/clock-regular.png" alt="Ícone de relógio">
-                            </div>
-                            <div class="hours-text">
-                                <p class="days">Todos os dias</p>
-                                <p class="time">09:00h - 18:00h</p>
-                            </div>
-                            <div class="clock-icon">
-                                <img src="/src/assets/img/Tel.png" alt="Ícone de relógio">
-                            </div>
-                            <div class="hours-text">
-                                <p class="time">211 098 756</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Informações -->
-        <div class="footer-info">
-            <div class="complaint-book">
-            <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
-        </div>
-    </footer>
-    
-
+    <div id="footer-container"></div>
     <script src="/src/assets/js/navlink.js"></script>
     <script>
         const cart = [];
@@ -262,6 +197,19 @@
         alert("Modificações guardadas!"); // Mensagem de confirmação
         location.reload(); // Atualiza a página
         });
+        // Função para carregar o conteúdo de um arquivo HTML
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        // Carregar a navbar e o rodapé
+        loadHTML('navbar-container', 'navbar_admin.html');
+        loadHTML('footer-container', 'footer_admin.html');
     </script>
 </body>
 
