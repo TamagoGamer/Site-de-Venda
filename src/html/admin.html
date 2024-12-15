@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>y Sweet Pc</title>
+    <title>My Sweet Pc</title>
     <link rel="stylesheet" href="/src/assets/Styles/graficos.css">
-    <link rel="stylesheet" href="/src/assets/Styles/admin.css">
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
@@ -90,21 +88,27 @@
                       <option value="eletronicos">Eletrônicos</option>
                       <option value="roupas">Computadores</option>
                       <option value="acessorios">Acessórios</option>
+                      <option value="acessorios">Produtos ativos</option>
+                      <option value="acessorios">Produtos inativos</option>
                     </select>
                   </div>
 
                   <!-- Ações -->
                   <div class="actions">
-                    <button class="button">Adicionar Produto +</button>
-                    <button class="button">Guardar alterações</button>
+                    <a href="novo_produto.html"><button class="button">Adicionar Produto +</button></a>
+                    <button class="button" id="save-changes">Guardar alterações</button>
                   </div>
                   
                   <!-- Lista de Produtos -->
                   <div class="product-list">
                     <!-- Produto 1 -->
                     <div class="product-card">
-                    <button class="button">Remover</button>
+                    <br>
+                    <td><button class="remove-button">Remover</button></td>
+                    <br>
+                    <br>
                       <img src="https://via.placeholder.com/300" alt="Produto 1">
+                      <br>
                       <h2>AirPods</h2><h3>199,99€</h3>
                       <p>Descrição do produto 1. Um ótimo produto para você!</p>
                       <button class="button">Alterar Foto</button>
@@ -123,8 +127,12 @@
                     </div>
                     </div>
                     <div class="product-card">
-                        <button class="button">Remover</button>
+                        <br>
+                        <td><button class="remove-button">Remover</button></td>
+                        <br>
+                        <br>
                           <img src="https://via.placeholder.com/300" alt="Produto 1">
+                          <br>
                           <h2>AirPods</h2><h3>199,99€</h3>
                           <p>Descrição do produto 1. Um ótimo produto para você!</p>
                           <button class="button">Alterar Foto</button>
@@ -143,8 +151,12 @@
                         </div>
                         </div>
                         <div class="product-card">
-                            <button class="button">Remover</button>
+                            <br>
+                            <td><button class="remove-button">Remover</button></td>
+                            <br>
+                            <br>
                               <img src="https://via.placeholder.com/300" alt="Produto 1">
+                              <br>
                               <h2>AirPods</h2><h3>199,99€</h3>
                               <p>Descrição do produto 1. Um ótimo produto para você!</p>
                               <button class="button">Alterar Foto</button>
@@ -163,8 +175,12 @@
                             </div>
                             </div>
                             <div class="product-card">
-                                <button class="button">Remover</button>
+                                <br>
+                                <td><button class="remove-button">Remover</button></td>
+                                <br>
+                                <br>
                                   <img src="https://via.placeholder.com/300" alt="Produto 1">
+                                  <br>
                                   <h2>AirPods</h2><h3>199,99€</h3>
                                   <p>Descrição do produto 1. Um ótimo produto para você!</p>
                                   <button class="button">Alterar Foto</button>
@@ -182,46 +198,6 @@
                                </select>
                                 </div>
                                 </div>
-                                <div class="product-card">
-                                    <button class="button">Remover</button>
-                                      <img src="https://via.placeholder.com/300" alt="Produto 1">
-                                      <h2>AirPods</h2><h3>199,99€</h3>
-                                      <p>Descrição do produto 1. Um ótimo produto para você!</p>
-                                      <button class="button">Alterar Foto</button>
-                                      <button class="button">Alterar Descrição</button>
-                                      <button class="button">Mudar Categoria</button>
-                                      <button class="button">Mudar Valor</button>
-                                      <!-- Filtros -->
-                                    <div class="filters">
-                                     <!-- Nova barra de seleção de cor -->
-                                    <select id="stock-color">
-                                    <option value="">Stock</option>             
-                                    <option value="">Disponível</option>
-                                    <option value="yellow">Em reposição</option>
-                                    <option value="red">Fora de stock</option>
-                                   </select>
-                                    </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <button class="button">Remover</button>
-                                          <img src="https://via.placeholder.com/300" alt="Produto 1">
-                                          <h2>AirPods</h2><h3>199,99€</h3>
-                                          <p>Descrição do produto 1. Um ótimo produto para você!</p>
-                                          <button class="button">Alterar Foto</button>
-                                          <button class="button">Alterar Descrição</button>
-                                          <button class="button">Mudar Categoria</button>
-                                          <button class="button">Mudar Valor</button>
-                                          <!-- Filtros -->
-                                        <div class="filters">
-                                         <!-- Nova barra de seleção de cor -->
-                                        <select id="stock-color">
-                                        <option value="">Stock</option>             
-                                        <option value="">Disponível</option>
-                                        <option value="yellow">Em reposição</option>
-                                        <option value="red">Fora de stock</option>
-                                       </select>
-                                        </div>
-                                        </div>
                 </div>
     </main>
 
@@ -256,20 +232,27 @@
             <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
+    
 
     <script src="/src/assets/js/navlink.js"></script>
     <script>
         const cart = [];
 
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
-
-                // Adiciona o produto ao carrinho
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
+        document.querySelectorAll('.remove-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const confirmation = confirm("Tem certeza que gostaria de eliminar o item?");
+        if (confirmation) {
+            // Lógica para remover o item do carrinho
+            alert("Item removido com sucesso! Não se esqueça de guardar as aterações."); // Mensagem de sucesso
+        } else {
+            alert("Item não foi removido."); // Mensagem se o usuário cancelar
+        }
+        
+        });
+        });
+        document.getElementById('save-changes').addEventListener('click', () => {
+        alert("Modificações guardadas!"); // Mensagem de confirmação
+        location.reload(); // Atualiza a página
         });
     </script>
 </body>

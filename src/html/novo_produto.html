@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Sweet Pc</title>
+    <link rel="stylesheet" href="/src/assets/Styles/novo_produto.css">
+    <link rel="stylesheet" href="/src/assets/Styles/admin.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/src/assets/img/descarregar.jpg"
+                        alt="LOGO">
+                    <span>My Sweet Pc</span>
+                </a>
+            </div>
+            <div class="InputContainer">
+                <input type="text" name="text" class="input" id="input" placeholder="Search">
+                <label for="input" class="labelforsearch">
+                    <svg viewBox="0 0 512 512" class="searchIcon">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                        </path>
+                    </svg>
+                </label>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="carrinho.html" class="menu-item"><img src="/src/assets/img/cart-shopping-solid.svg" alt="Perfil" style="width: 24px; height: 24px;"></a></li>
+                <li class="dropdown">
+                    <a href="#" class="menu-item dropdown-toggle">
+                        <img src="/src/assets/img/user-solid.svg" alt="Perfil" style="width: 24px; height: 24px;">
+                        Perfil <span class="arrow-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="registrar.html">Registrar</a></li>
+                        <li><a href="minha_conta.html" class="menu-item">Minha Conta</a></li>
+                        <li><a href="admin.html" class="menu-item">Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <main>
+        <div class="form-container">
+            <h1>Adicionar Novo Produto</h1>
+            <br>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="product-name">Nome do Produto:</label>
+                    <input type="text" id="product-name" placeholder="Nome do Produto" required>
+                </div>
+                <div class="filters">
+                    <!-- Nova barra de seleção de cor -->
+                   <select id="stock-color">
+                   <option value="">Categoria</option>             
+                   <option value="">Eletrônicos</option>
+                   <option value="yellow">Computadores</option>
+                   <option value="red">Games</option>
+                  </select>
+                   </div>
+                <div class="form-group">
+                    <label for="product-price">Preço:</label>
+                    <input type="number" id="product-price" placeholder="Preço" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descrição:</label>
+                    <textarea id="product-description" placeholder="Descrição do Produto" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">URL da Imagem:</label>
+                    <input type="text" id="product-image" placeholder="URL da Imagem" required>
+                </div>
+                <button type="submit" class="button">Adicionar Produto</button>
+            </form>
+        </div>
+    </main>
+    <br>
+    <br>
+    <footer class="footer">
+        <footer class="footer">
+            <div class="footer-content">
+                        <!-- Horários de Funcionamento no Footer -->
+                        <div class="footer-hours">
+                            <h4>Horário e contacto de Funcionamento do Suportre</h4>
+                            <div class="hours-item">
+                                <div class="clock-icon">
+                                    <img src="/src/assets/img/clock-regular.png" alt="Ícone de relógio">
+                                </div>
+                                <div class="hours-text">
+                                    <p class="days">Todos os dias</p>
+                                    <p class="time">09:00h - 18:00h</p>
+                                </div>
+                                <div class="clock-icon">
+                                    <img src="/src/assets/img/Tel.png" alt="Ícone de relógio">
+                                </div>
+                                <div class="hours-text">
+                                    <p class="time">211 098 756</p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Informações -->
+            <div class="footer-info">
+                <div class="complaint-book">
+                <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
+            </div>
+        </footer>
+    <script src="/src/assets/js/navlink.js"></script>
+</body>
+<script>
+    document.getElementById('add-product-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Aqui você pode adicionar a lógica para salvar o produto, se necessário
+
+        alert("Produto adicionado com sucesso!"); // Mensagem de confirmação
+        location.reload(); // Atualiza a página
+    });
+</script>
+
+</html>

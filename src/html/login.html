@@ -67,7 +67,7 @@
                     </div>
                     <button type="submit">Entrar</button>
                 </form>
-                <p>Não tem uma conta? <a href="register.html">Registrar</a></p>
+                <p>Não tem uma conta? <a href="registrar.html">Registrar</a></p>
             </div>
         </main>
         <br>
@@ -144,22 +144,6 @@
             <p class="copyright">© 2024 Loja Online - Site de Venda. All rights reserved</p>
         </div>
     </footer>
-
-    <script src="/src/assets/js/navlink.js"></script>
-    <script>
-        const cart = [];
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
-
-                // Adiciona o produto ao carrinho
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
-    </script>
 </body>
 
 </html>
