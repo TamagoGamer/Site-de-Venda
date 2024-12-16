@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .product-details {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+
+        .product-info {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .product-images img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #main-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .product-name {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            color: #f56c42; /* Vermelho meio alaranjado */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            align-self: flex-end;
+        }
+
+        .rating {
+            margin-bottom: 20px;
+        }
+
+        .rating span {
+            color: #ffd700;
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        .product-specifications {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product-specifications h3 {
+            margin-top: 0;
+        }
+
+        .add-to-cart-button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="product-details">
+        <section class="product-info">
+            <div class="product-images">
+                <img src="image1.jpg" alt="Imagem 1" onclick="changeMainImage('image1.jpg')">
+                <img src="image2.jpg" alt="Imagem 2" onclick="changeMainImage('image2.jpg')">
+                <img src="image3.jpg" alt="Imagem 3" onclick="changeMainImage('image3.jpg')">
+                <img src="image4.jpg" alt="Imagem 4" onclick="changeMainImage('image4.jpg')">
+            </div>
+            <img id="main-image" src="" alt="Imagem principal do produto">
+            <h1 id="product-name" class="product-name"></h1>
+            <p id="product-price" class="product-price"></p>
+            <div class="rating">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span> <!-- 4 estrelas de avaliação -->
+            </div>
+            <button id="add-to-cart-button" class="add-to-cart-button">Adicionar ao Carrinho</button>
+
+            <div class="product-specifications">
+                <h3>Especificações Técnicas</h3>
+                <ul>
+                    <li>Processador: Intel Core i7</li>
+                    <li>Memória RAM: 16GB</li>
+                    <li>Armazenamento: 512GB SSD</li>
+                    <li>Tela: 15.6" Full HD</li>
+                    <li>Sistema Operacional: Windows 11</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Recupera os dados do localStorage
+        const productName = localStorage.getItem('productName');
+        const productPrice = localStorage.getItem('productPrice');
+        const productImage = localStorage.getItem('productImage');
+
+        // Exibe os dados na página
+        document.getElementById('product-name').innerText = productName;
+        document.getElementById('product-price').innerText = `€ ${parseFloat(productPrice).toFixed(2)}`;
+        document.getElementById('main-image').src = productImage;
+
+        // Função para mudar a imagem principal
+        function changeMainImage(image) {
+            document.getElementById('main-image').src = image;
+        }
+
+        // Função para adicionar ao carrinho
+        function addToCart() {
+            alert(`${productName} foi adicionado ao carrinho!`);
+        }
+
+        // Adiciona o evento ao botão de adicionar ao carrinho
+        document.getElementById('add-to-cart-button').addEventListener('click', addToCart);
+    </script>
+</body>
+
+</html>

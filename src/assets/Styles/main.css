@@ -2,25 +2,20 @@
 .carousel {
     position: relative;
     max-width: 1500px;
-    /* Define a largura máxima do carrossel (ajustável conforme necessário) */
     margin: auto;
-    /* Centraliza o carrossel horizontalmente */
     overflow: hidden;
 }
 
-/* Estilos para o contêiner das imagens do carrossel */
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease;
 }
 
-/* Estilos para cada slide individual */
 .slide {
     min-width: 100%;
     transition: opacity 0.5s ease;
 }
 
-/* Estilos para as imagens dentro do carrossel */
 .carousel-images img {
     max-width: 100%;
     border-radius: 5px;
@@ -29,33 +24,27 @@
     object-fit: cover;
 }
 
-/* Estilos para os inputs de rádio (usados para controlar a navegação) */
 input[type="radio"] {
     display: none;
 }
 
-/* Estilos para o carrossel quando o primeiro slide é selecionado */
-#slide1:checked~.carousel-images {
+#slide1:checked ~ .carousel-images {
     transform: translateX(0);
 }
 
-/* Estilos para o carrossel quando o segundo slide é selecionado */
-#slide2:checked~.carousel-images {
+#slide2:checked ~ .carousel-images {
     transform: translateX(-100%);
 }
 
-/* Estilos para o carrossel quando o terceiro slide é selecionado */
-#slide3:checked~.carousel-images {
+#slide3:checked ~ .carousel-images {
     transform: translateX(-200%);
 }
 
-/* Estilos para a navegação (pontos) abaixo do carrossel */
 .carousel-nav {
     text-align: center;
     margin-top: 10px;
 }
 
-/* Estilos para cada ponto de navegação */
 .carousel-dot {
     cursor: pointer;
     display: inline-block;
@@ -67,109 +56,162 @@ input[type="radio"] {
     transition: background-color 0.3s;
 }
 
-/* Estilos para os pontos de navegação quando um slide é selecionado */
-#slide1:checked~.carousel-nav label[for="slide1"],
-#slide2:checked~.carousel-nav label[for="slide2"],
-#slide3:checked~.carousel-nav label[for="slide3"] {
+#slide1:checked ~ .carousel-nav label[for="slide1"],
+#slide2:checked ~ .carousel-nav label[for="slide2"],
+#slide3:checked ~ .carousel-nav label[for="slide3"] {
     background-color: #717171;
 }
 
-@media (max-width: 767px) {
+/* Produtos em Destaque e Natal */
+.featured-products, .christmas-products {
+    margin: 40px 0;
+}
 
-    /* Estilos para o contêiner do carrossel */
-    .carousel {
-        position: flex;
-        max-width: 1500px;
-        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
-        margin: auto;
-        /* Centraliza o carrossel horizontalmente */
-        justify-content: center;
-    }
+.featured-products h2, .christmas-products h2, .categories h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #444;
+}
 
-    /* Estilos para o contêiner das imagens do carrossel */
-    .carousel-images {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-    /* Estilos para cada slide individual */
-    .slide {
-        min-width: 100%;
-        transition: opacity 0.5s ease;
-    }
+.product-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
 
-    /* Estilos para as imagens dentro do carrossel */
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-item button {
+    margin-top: 8px;
+    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #e05500;
+}
+
+/* Categorias */
+.categories {
+    margin: 40px 0;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.category-item h3 {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* Responsividade */
+@media screen and (max-width: 767px) {
     .carousel-images img {
-        max-width: 100%;
-        border-radius: 5px;
-        object-fit: fill;
         height: 150px;
     }
 
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .category-item {
+        width: 45%;
+    }
+
+    .product-item h3 {
+        font-size: 1rem;
+    }
+
+    .product-item button {
+        font-size: 0.9rem;
+    }
 }
 
-@media (max-width: 1024px) {
-
-    /* Estilos para o contêiner do carrossel */
-    .carousel {
-        position: flex;
-        max-width: 2000px;
-        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
-        margin: auto;
-        /* Centraliza o carrossel horizontalmente */
-        justify-content: center;
-    }
-
-    /* Estilos para o contêiner das imagens do carrossel */
-    .carousel-images {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
-
-    /* Estilos para cada slide individual */
-    .slide {
-        min-width: 100%;
-        transition: opacity 0.5s ease;
-    }
-
-    /* Estilos para as imagens dentro do carrossel */
+@media screen and (max-width: 1024px) {
     .carousel-images img {
-        max-width: 100%;
-        border-radius: 5px;
-        object-fit: fill;
         height: 220px;
     }
+
+    .category-item {
+        width: 40%;
+    }
 }
 
-@media (max-width: 412px) {
-
-    /* Estilos para o contêiner do carrossel */
-    .carousel {
-        position: flex;
-        max-width: 2000px;
-        /* Define a largura máxima do carrossel (ajustável conforme necessário) */
-        margin: auto;
-        /* Centraliza o carrossel horizontalmente */
-        justify-content: center;
-    }
-
-    /* Estilos para o contêiner das imagens do carrossel */
-    .carousel-images {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
-
-    /* Estilos para cada slide individual */
-    .slide {
-        min-width: 100%;
-        transition: opacity 0.5s ease;
-    }
-
-    /* Estilos para as imagens dentro do carrossel */
+@media screen and (max-width: 412px) {
     .carousel-images img {
-        max-width: 100%;
-        border-radius: 5px;  
-        object-fit: fill;
         height: 130px;
+    }
+
+    .category-item {
+        width: 100%;
     }
 }

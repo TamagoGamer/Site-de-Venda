@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="/src/assets/Styles/contacto.css">
+    <title>Contato - MySweetPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="/src/assets/img/descarregar.jpg" alt="LOGO">
+                <span>My Sweet Pc</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Formulário de Contato -->
+    <section class="contact-form">
+        <h2>Formulário de Contato</h2>
+        <form action="#" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+            <label for="phone">Número de Telefone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Digite seu número de telefone" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Informações de Contato -->
+    <section class="contact-info">
+        <h2>Informações de Contato</h2>
+        <div class="info-box">
+            <p><strong>Email:</strong> <a href="mailto:contato@mysweetpc.com">contato@mysweetpc.com</a></p>
+            <p><strong>Endereço:</strong> R. Silva Tavares 1, 1750-155 Lisboa</p>
+            
+            <div>
+                <p><strong>Número de Contato:</strong> +351 912 345 678</p>
+            </div>
+        </div>
+    </section>
+    <div id="footer-container"></div>
+    <script>
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
+</body>
+</html>

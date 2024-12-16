@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <title>Informações de Entregas - Worten</title>
+    <style>
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #d91515;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            color: #d91515;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #d91515;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Perguntas Frequentes */
+        .faq {
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .faq h3 {
+            color: #d91515;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+    </style>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="/src/assets/img/descarregar.jpg" alt="LOGO">
+                <span>My Sweet Pc</span>
+            </a>
+        </div>
+    </nav>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Informações de Entregas</h1>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h2>Política de Entregas</h2>
+        <p>Na MySweetPC, garantimos um serviço de entrega eficiente e adaptado às suas necessidades. Trabalhamos com parceiros de transporte de confiança para assegurar que a sua encomenda chegue em perfeitas condições e dentro do prazo.</p>
+
+        <h2>Prazos de Entrega</h2>
+        <p>O prazo de entrega varia conforme a opção de envio escolhida e a localização do destinatário:</p>
+        <ul>
+            <li><span class="highlight">Entrega Standard:</span> 2 a 5 dias úteis.</li>
+            <li><span class="highlight">Entrega Expresso:</span> 1 a 2 dias úteis.</li>
+            <li><span class="highlight">Grandes Formatos:</span> Até 7 dias úteis, dependendo da região.</li>
+        </ul>
+
+        <h2>Rastreamento de Encomendas</h2>
+        <p>Você pode acompanhar o estado da sua encomenda através da sua <span class="highlight">área de cliente</span> no site MySweetPC.pt. Para isso, acesse a seção "As Minhas Encomendas" e clique em **"Rastrear Entrega"**.</p>
+        <p>Alternativamente, pode inserir o código de rastreamento no site do parceiro de transporte.</p>
+
+        <h2>Taxas de Entrega</h2>
+        <p>As taxas de entrega são calculadas com base no peso, tamanho e local de entrega da encomenda. O valor final será exibido no checkout antes da finalização da compra.</p>
+
+        <!-- Perguntas Frequentes -->
+        <div class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <h3>1. Posso alterar a morada de entrega?</h3>
+            <p>Sim, desde que a encomenda ainda não tenha sido enviada. Entre em contacto com o nosso suporte para solicitar a alteração.</p>
+
+            <h3>2. O que acontece se eu não estiver em casa para receber a entrega?</h3>
+            <p>Se não estiver presente no momento da entrega, o parceiro de transporte deixará um aviso com instruções para reagendamento ou retirada do produto.</p>
+
+            <h3>3. Como posso acompanhar a entrega de um grande formato?</h3>
+            <p>Entregas de grandes formatos são agendadas previamente. O transportador entrará em contacto para confirmar a data e o horário de entrega.</p>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script>
+        function loadHTML(elementId, filePath) {
+                fetch(filePath)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Erro ao carregar o arquivo:', error));
+            }
+            loadHTML('navbar-container', 'navbar.html');
+            loadHTML('footer-container', 'footer.html');
+        </script>
+</body>
+</html>

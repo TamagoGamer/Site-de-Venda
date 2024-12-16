@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <title>Política de Devoluções - Worten</title>
+    <style>
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #d91515;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        /* Conteúdo Principal */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            color: #d91515;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            margin-bottom: 15px;
+        }
+
+        .container ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        .container ul li {
+            margin-bottom: 10px;
+        }
+
+        .note {
+            background-color: #ffefef;
+            border-left: 4px solid #d91515;
+            padding: 10px;
+            margin: 20px 0;
+        }
+    </style>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="/src/assets/img/descarregar.jpg" alt="LOGO">
+                <span>My Sweet Pc</span>
+            </a>
+        </div>
+    </nav>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Política de Devoluções</h1>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h2>1. Condições Gerais</h2>
+        <p>A Worten está comprometida em garantir a satisfação dos seus clientes. Caso não esteja satisfeito com a sua compra, poderá solicitar a devolução do produto de acordo com as condições abaixo.</p>
+
+        <h2>2. Prazos para Devolução</h2>
+        <ul>
+            <li><strong>Loja Física:</strong> O prazo para devolução é de <strong>15 dias</strong> após a data da compra.</li>
+            <li><strong>Loja Online:</strong> O prazo para devolução é de <strong>30 dias</strong> após o recebimento do produto.</li>
+            <li>O produto deve estar em perfeitas condições e na embalagem original.</li>
+        </ul>
+
+        <h2>3. Produtos Não Elegíveis para Devolução</h2>
+        <p>Os seguintes produtos não podem ser devolvidos:</p>
+        <ul>
+            <li>Produtos de uso pessoal (ex: fones de ouvido abertos, escovas de dente elétricas).</li>
+            <li>Produtos digitais ou software com códigos ativados.</li>
+            <li>Produtos que apresentem sinais de uso ou danos.</li>
+        </ul>
+
+        <h2>4. Procedimentos para Devolução</h2>
+        <p>Para efetuar a devolução, siga os passos abaixo:</p>
+        <ul>
+            <li> Entre em contacto com o <strong>Suporte ao Cliente</strong> através do e-mail <strong>suporte@MySweetPC.pt</strong> ou visite uma das nossas lojas físicas.</li>
+            <li> Informe os dados da compra (número do pedido, nome completo e motivo da devolução).</li>
+            <li> Traga ou envie o produto na sua embalagem original, acompanhado do comprovativo de compra.</li>
+        </ul>
+        <div class="note">
+            <p><strong>Nota:</strong> Produtos devolvidos sem comunicação prévia ou fora dos prazos estabelecidos não serão aceitos.</p>
+        </div>
+
+        <h2>5. Reembolso</h2>
+        <p>O reembolso será processado após a verificação do produto devolvido e poderá ser feito da seguinte forma:</p>
+        <ul>
+            <li><strong>Cartão de Crédito:</strong> O valor será estornado na sua fatura.</li>
+            <li><strong>Transferência Bancária:</strong> O reembolso será creditado em até <strong>7 dias úteis</strong>.</li>
+            <li><strong>Vale-Troca:</strong> Opcionalmente, poderá optar por um vale-troca para utilizar em futuras compras.</li>
+        </ul>
+
+        <h2>6. Contato</h2>
+        <p>Em caso de dúvidas sobre a nossa política de devoluções, entre em contacto através de:</p>
+        <ul>
+            <li>E-mail: <strong>suporte@MySweetPC.pt</strong></li>
+            <li>Telefone: <strong>+351 123 456 789</strong></li>
+        </ul>
+    </div>
+</body>
+<div id="footer-container"></div>
+<script>
+    function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
+</html>

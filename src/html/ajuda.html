@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <title>Ajuda - Worten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .header {
+            background-color: #d91515;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            width: 60%;
+            max-width: 600px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .faqs {
+            background-color: white;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        .faqs h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .faqs ul {
+            list-style: none;
+        }
+
+        .faqs li {
+            margin-bottom: 15px;
+        }
+
+        .faqs a {
+            text-decoration: none;
+            color: #0074d9;
+            font-size: 16px;
+        }
+
+        .faqs a:hover {
+            text-decoration: underline;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card img {
+            width: 40px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .info-card a {
+            text-decoration: none;
+            color: #d91515;
+            font-weight: bold;
+        }
+
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="/src/assets/img/descarregar.jpg" alt="LOGO">
+                <span>My Sweet Pc</span>
+            </a>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Olá. Como podemos ajudar?</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="O que procuras?">
+            <button>&#128269;</button>
+        </div>
+    </div>
+
+    <!-- Perguntas Frequentes -->
+    <div class="faqs">
+        <h2>Perguntas mais frequentes</h2>
+        <ul>
+            <li><a href="#">Como seguir uma encomenda MySweetPC?</a></li>
+            <li><a href="#">Posso cancelar a minha encomenda?</a></li>
+            <li><a href="#">Como posso consultar faturas na MySweetPC?</a></li>
+        </ul>
+    </div>
+
+    <!-- Informações em Grid -->
+    <div class="info-grid">
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/ceb691402785f134cd5d1857c13f12d2d0a4018a" alt="Serviços">
+            <h3>Serviços & Reparações</h3>
+            <p>O meu produto avariou, e agora? Onde saber mais sobre reparações?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/2a4b6f5c643392dde471a235ceb93fa834a6d07a" alt="Entregas">
+            <h3>Informações de entregas</h3>
+            <p>Como alterar a morada de entrega? Horários de entrega.</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/c9db0b43e8bbe54e877048a3aaafc5d85cd14b3e" alt="Compras">
+            <h3>Comprar na Worten</h3>
+            <p>Como consultar características técnicas ou horários de lojas?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/f7e33510c05751912d30cd2f5b2a7f86907781a3" alt="Marketplace">
+            <h3>Marketplace</h3>
+            <p>Como acompanhar a encomenda ou devolver produtos do Marketplace?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/91e470c3ad24a1053b551a7c958ba8893e560e2a" alt="Devoluções">
+            <h3>Devoluções</h3>
+            <p>Como devolver um produto comprado em loja ou online?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/a82a454ddb92e67588eed9ef0afb86fa6728bddf" alt="Pagamentos">
+            <h3>Pagamentos</h3>
+            <p>Como devolver um produto comprado em loja ou online?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/27db497d50b5367b24b0f790bda962290fa2b748" alt="Preço Minímo Garantido">
+            <h3>Preço Minímo Garantido</h3>
+            <p>O que é a política de preço mínimo garantido da MySweetPC?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/d2061d5cf358a6d49857205ebc3e9d5b052b7660" alt="Minha Conta">
+            <h3>Minha Conta</h3>
+            <p>Como posso alterar os meus dados pessoais?</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="info-card">
+            <img src="https://www.worten.pt/i/f6eb0753c73bd96f08e5305af0d78de0182a9681" alt="Informações Legais">
+            <h3>Informações Legais</h3>
+            <p>Políticas de privacidade, termos e condições de utilização de serviços.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+</body>
+<div id="footer-container"></div>
+<script>
+    function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
+</html>

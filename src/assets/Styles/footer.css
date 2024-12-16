@@ -1,31 +1,34 @@
-
-
-/* Outras regras de estilo para o footer, se necessário */
-.footer {
-    background-color: #ff1f2b; /* Cor de fundo do footer */
-    color: white; /* Cor do texto do footer */
-    padding: 20px 0;
-    width: 100%;
-    text-align: center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px 50px;
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    color: white; /* Garantir que o texto dentro do footer-content seja branco */
+    flex-wrap: wrap;
 }
 
-/* Estilos para o formulário de contato */
-.contact-form {
-    flex: 1;
-    max-width: 500px;
+.footer-section {
+    margin: 10px 20px;
+    flex: 1; /* Ajusta para que as seções ocupem espaço igual */
+    min-width: 200px; /* Garante uma largura mínima para as seções */
 }
 
-.form-group {
-    margin-bottom: 28px;
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
 }
 
 .form-group input,
@@ -36,150 +39,86 @@
     border-radius: 4px;
 }
 
-.form-group textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: white;
-    color: #ff1f2b;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.contact-form button:hover {
-    background-color: white;
-}
-
-/* Estilos para o lado direito com mapa e localização */
-.footer-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.location-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.map-container {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-}
-
-.map {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-.map img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.address {
-    color: #fff;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-/* Estilos para os horários no footer */
-.footer-hours {
-    color: #fff;
-    width: 100%;
-    max-width: 450px;
-}
-
-.footer-hours h4 {
+.footer-section ul li a {
+    text-decoration: none;
     color: white;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.footer-hours .hours-item {
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-icons {
     display: flex;
-    align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 15px;
-    border-radius: 25px;
-}
-
-.footer-hours .clock-icon {
-    background: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-
-.footer-hours .clock-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.footer-hours .hours-text {
-    flex: 1;
-}
-
-.footer-hours .days {
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-
-.footer-hours .time {
-    color: white;
-}
-
-/* Estilos para informações adicionais do footer */
-.footer-info {
     margin-top: 20px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
 }
 
-.complaint-book {
-    margin-bottom: 10px;
-}
-
-.complaint-book img {
-    max-width: 150px;
+.footer-icons img {
+    width: 40px;
     height: auto;
 }
 
-.copyright {
-    font-size: 0.9em;
-    color: #fff;
+.app-buttons img {
+    width: 120px;
+    margin: 5px 0;
+}
+
+.map iframe {
+    width: 100%; /* Garante que o mapa se ajuste em telas menores */
+    height: 200px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.address p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
+    footer {
+        padding: 20px 20px; /* Reduz o padding em telas pequenas */
     }
 
-    .contact-form,
-    .footer-right {
-        width: 100%;
-        max-width: 100%;
+    .footer-container {
+        flex-direction: column; /* Empilha as seções verticalmente */
+        align-items: center; /* Centraliza os elementos */
+    }
+
+    .footer-section {
+        margin: 15px 0;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .app-buttons img {
+        width: 100px; /* Reduz o tamanho dos botões do app */
+    }
+
+    .map iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h3 {
+        font-size: 14px; /* Reduz o tamanho dos títulos */
+    }
+
+    .footer-section ul li a {
+        font-size: 12px; /* Reduz o tamanho das fontes nos links */
+    }
+
+    .bottom-text {
+        font-size: 10px; /* Diminui o tamanho do texto inferior */
     }
 }
