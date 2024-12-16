@@ -62,7 +62,7 @@
                     onclick="redirectToProductPage('4', 'Mouse Sem Fio', '131,99', 'https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg')">
                     <img src="https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg"
                         alt="Produto 2">
-                    <h3>Mouse Sem Fio</h3>
+                    <h3>Rato Wireless</h3>
                     <p>€ 131,99</p>
                     <button>Ver Detalhes</button>
                 </div>
@@ -80,16 +80,16 @@
         <section class="categories">
             <h2>Categorias</h2>
             <div class="category-grid">
-                <div class="category-item">
+                <div class="category-item"  onclick="redirectToCategoryNote()">
                     <img  src="https://static.fnac-static.com/multimedia/Images/PT/NR/9c/fd/7c/8191388/1540-1.jpg" alt="Categoria 1">
                     <h3>Notebooks</h3>
                 </div>
-                <div class="category-item">
+                <div class="category-item"  onclick="redirectToCategoryPeri()">
                     <img src="https://s3.chip7.pt/74598/responsive-images/c74dLwu3___page_800_648.webp"
                         alt="Categoria 2">
                     <h3>Periféricos</h3>
                 </div>
-                <div class="category-item">
+                <div class="category-item"  onclick="redirectToCategoryHard()">
                     <img src="https://s3.chip7.pt/362899/responsive-images/c7PtMTKQ___page_800_523.webp"
                         alt="Categoria 3">
                     <h3>Hardware</h3>
@@ -123,7 +123,6 @@
 
     <!-- Footer -->
     <div id="footer-container"></div>
-    <script src="/src/assets/js/navlink.js"></script>
     <!-- Scripts -->
     <script>
         function redirectToProductPage(id, name, price, image) {
@@ -137,6 +136,21 @@
             window.location.href = 'detalhes.html';  // Ou o caminho da sua página de detalhes
         }
 
+        function redirectToCategoryNote() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'pcs.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryPeri() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'periféricos.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryHard() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'hardware.html';  // Ou o caminho da sua página de detalhes
+        }
+
         function loadHTML(elementId, filePath) {
             fetch(filePath)
                 .then(response => response.text())
@@ -148,6 +162,7 @@
 
         loadHTML('navbar-container', 'navbar.html');
         loadHTML('footer-container', 'footer.html');
+
     </script>
 </body>
 

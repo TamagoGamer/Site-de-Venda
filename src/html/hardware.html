@@ -154,32 +154,32 @@
         </aside>
 
         <!-- Grade de Produtos -->
-        <section class="products">
+        <section class="products" style="margin-bottom: 100px;">
             <!-- Produto 1 -->
             <div class="product-card">
-                <img src="/src/assets/img/hard1.jpg" alt="TV LG OLED evo">
+                <img src="/src/assets/img/hard1.jpg" alt="TV LG OLED evo" onclick="redirectToProductPage('12', 'Placa Gráfica', '599,00', '/src/assets/img/hard1.jpg')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
-                <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <h4>Placa Gráfica</h4>
+                <p>€599,00</p>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('12', 'Placa Gráfica', '599,00', '/src/assets/img/hard1.jpg')">Ver Detalhes</button>
             </div>
 
             <!-- Produto 2 -->
             <div class="product-card">
-                <img src="/src/assets/img/hard2.jpg" alt="TV LG OLED evo">
+                <img src="/src/assets/img/hard2.jpg" alt="TV LG OLED evo" onclick="redirectToProductPage('13', 'Motherboard', '459,99', '/src/assets/img/hard2.jpg')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
-                <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <h4>Motherboard</h4>
+                <p>€459,99</p>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('13', 'Motherboard', '459,99', '/src/assets/img/hard2.jpg')">Ver Detalhes</button>
             </div>
 
             <!-- Produto 3 -->
             <div class="product-card">
-                <img src="/src/assets/img/hard3.jpg" alt="TV LG OLED evo">
+                <img src="/src/assets/img/hard3.jpg" alt="TV LG OLED evo" onclick="redirectToProductPage('14', 'Memória Ram', '249,99', '/src/assets/img/hard3.jpg')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
-                <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <h4>Memória Ram</h4>
+                <p>€249,99</p>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('14', 'Memória Ram', '249,99', '/src/assets/img/hard3.jpg')">Ver Detalhes</button>
             </div>
         </section>
     </main>
@@ -190,17 +190,31 @@
     <!-- Scripts -->
     <script src="/src/assets/js/navlink.js"></script>
     <script>
-        const cart = [];
+        function redirectToProductPage(id, name, price, image) {
+            // Armazena as informações do produto no localStorage
+            localStorage.setItem('productId', id);
+            localStorage.setItem('productName', name);
+            localStorage.setItem('productPrice', price);
+            localStorage.setItem('productImage', image);
 
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'detalhes.html';  // Ou o caminho da sua página de detalhes
+        }
 
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
+        function redirectToCategoryNote() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'pcs.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryPeri() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'periféricos.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryHard() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'hardware.html';  // Ou o caminho da sua página de detalhes
+        }
 
         function loadHTML(elementId, filePath) {
             fetch(filePath)

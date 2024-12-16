@@ -154,39 +154,39 @@
         </aside>
 
         <!-- Grade de Produtos -->
-        <section class="products">
+        <section class="products" style="margin-bottom: 100px;">
             <!-- Produto 1 -->
-            <div class="product-card">
-                <img src="/src/assets/img/peri1.png" alt="TV LG OLED evo">
+            <div class="product-card" >
+                <img src="/src/assets/img/peri1.png" alt="TV LG OLED evo" onclick="redirectToProductPage('7', 'Impressora', '1099,00', '/src/assets/img/peri1.png')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
+                <h4>Impressora</h4>
                 <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('7', 'Impressora', '1099,00', '/src/assets/img/peri1.png')">Ver Detalhes</button>
             </div>
 
             <!-- Produto 2 -->
             <div class="product-card">
-                <img src="" alt="Rato">
+                <img src="https://switchtechnology.pt/switch-cont/uploads/2023/03/RZ01-04870100-R3G1_2.jpg" alt="Rato" onclick="redirectToProductPage('7', 'Rato Gamer', '131,99', 'https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
-                <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <h4>Rato Gamer</h4>
+                <p>€ 131,99</p>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('4', 'Rato Gamer', '131,99', 'https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg')">Ver Detalhes</button>
             </div>
 
             <!-- Produto 3 -->
             <div class="product-card">
-                <img src="" alt="Monitor">
+                <img src="/src/assets/img/msiMonitor.webp" alt="Monitor" onclick="redirectToProductPage('2', 'Monitor Curvo', '1310.31', '/src/assets/img/msiMonitor.webp')">
                 <p class="discount">-15% Soundbar LG</p>
-                <h4>TV LG OLED55C46LA</h4>
-                <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <h4>Monitor Curvo</h4>
+                <p>€ 1.310,31</p>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('2', 'Monitor Curvo', '1310.31', '/src/assets/img/msiMonitor.webp')">Ver Detalhes</button>
             </div>
             <div class="product-card">
-                <img src="" alt="impressora">
+                <img src="https://thumb.pccomponentes.com/w-530-530/articles/1086/10863674/1855-lg-oled-evo-oled55c4la-55-oled-ultrahd-4k-webos-lg-s40tr-regalo-barra-de-sonido.jpg" alt="impressora" onclick="redirectToProductPage('5', 'TV LG OLED55C46LA', '1099,00', 'https://thumb.pccomponentes.com/w-530-530/articles/1086/10863674/1855-lg-oled-evo-oled55c4la-55-oled-ultrahd-4k-webos-lg-s40tr-regalo-barra-de-sonido.jpg')">
                 <p class="discount">-15% Soundbar LG</p>
                 <h4>TV LG OLED55C46LA</h4>
                 <p>€1.099,00</p>
-                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+                <button style="margin-bottom: 8px;" onclick="redirectToProductPage('5', 'TV LG OLED55C46LA', '1099,00', 'https://thumb.pccomponentes.com/w-530-530/articles/1086/10863674/1855-lg-oled-evo-oled55c4la-55-oled-ultrahd-4k-webos-lg-s40tr-regalo-barra-de-sonido.jpg')">Ver Detalhes</button>
             </div>
         </section>
     </main>
@@ -197,17 +197,31 @@
     <!-- Scripts -->
     <script src="/src/assets/js/navlink.js"></script>
     <script>
-        const cart = [];
+        function redirectToProductPage(id, name, price, image) {
+            // Armazena as informações do produto no localStorage
+            localStorage.setItem('productId', id);
+            localStorage.setItem('productName', name);
+            localStorage.setItem('productPrice', price);
+            localStorage.setItem('productImage', image);
 
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'detalhes.html';  // Ou o caminho da sua página de detalhes
+        }
 
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
+        function redirectToCategoryNote() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'pcs.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryPeri() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'periféricos.html';  // Ou o caminho da sua página de detalhes
+        }
+
+        function redirectToCategoryHard() {
+            // Redireciona para a página de detalhes do produto
+            window.location.href = 'hardware.html';  // Ou o caminho da sua página de detalhes
+        }
 
         function loadHTML(elementId, filePath) {
             fetch(filePath)
