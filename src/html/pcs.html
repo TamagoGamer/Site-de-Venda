@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Sweet Pc</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
+    <link rel="stylesheet" href="/src/assets/Styles/produtos.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Layout principal */
+        main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Barra lateral de filtros */
+        .filters {
+            flex: 1 1 200px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .filters h3 {
+            color: #ff1f2b;
+            margin-bottom: 10px;
+        }
+
+        .filters label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Grade de Produtos */
+        .products {
+            flex: 3 1 700px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px);
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .product-card p,
+        .product-card h4 {
+            margin: 5px 0;
+        }
+
+        .product-card .discount {
+            color: #ff1f2b;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-card .button {
+            background-color: #ff1f2b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .product-card .button:hover {
+            background-color: darkred;
+        }
+
+        .product-card img {
+             width: 100%; /* Garante que a imagem ocupa toda a largura disponível */
+             height: 150px; /* Define uma altura fixa */
+             object-fit: cover; /* Mantém o aspecto visual da imagem sem deformar */
+             margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            .products {
+                gap: 15px;
+            }
+
+            .product-card {
+                width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Barra Lateral de Filtros -->
+        <aside class="filters">
+            <h3>Melhores Escolhas</h3>
+            <label><input type="checkbox"> Portes Grátis</label>
+            <label><input type="checkbox"> Em Campanha</label>
+            <label><input type="checkbox"> Novidade</label>
+
+            <h3>Desconto Direto</h3>
+            <label><input type="checkbox"> Até 20%</label>
+            <label><input type="checkbox"> De 20% a 30%</label>
+            <label><input type="checkbox"> De 30% a 50%</label>
+
+            <h3>Marca</h3>
+            <label><input type="checkbox"> Aorus</label>
+            <label><input type="checkbox"> MSI</label>
+            <label><input type="checkbox"> Apple</label>
+        </aside>
+
+        <!-- Grade de Produtos -->
+        <section class="products">
+            <!-- Produto 1 -->
+            <div class="product-card">
+                <img src="/src/assets/img/PC1.jpg" alt="TV LG OLED evo">
+                <p class="discount"></p>
+                <h4>Macbook M2</h4>
+                <p>€1.200,00</p>
+                <a href="ver_mais1.html"><button class="button">Mais informação +</button></a>
+                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+                <img src="/src/assets/img/PC2.jpg" alt="TV LG OLED evo">
+                <p class="discount"></p>
+                <h4>Macbook Pro M3</h4>
+                <p>€1.500,00</p>
+                <a href="ver_mais1.html"><button class="button">Mais informação +</button></a>
+                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+                <img src="/src/assets/img/pc3.jpg" alt="TV LG OLED evo">
+                <p class="discount">-15%</p>
+                <h4>Portatil gaming MSI </h4>
+                <p>€1.399,00</p>
+                <a href="ver_mais1.html"><button class="button">Mais informação +</button></a>
+                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-card">
+                <img src="/src/assets/img/pc4.jpg" alt="TV LG OLED evo">
+                <p class="discount"></p>
+                <h4>Portatil gaming ASUS </h4>
+                <p>€1.267,00</p>
+                <a href="ver_mais1.html"><button class="button">Mais informação +</button></a>
+                <button class="button add-to-cart" data-nome="Macbook M2" data-preco="1499.99">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/src/assets/js/navlink.js"></script>
+    <script>
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-nome');
+                const productPrice = parseFloat(button.getAttribute('data-preco'));
+
+                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
+                alert(`${productName} foi adicionado ao carrinho!`);
+            });
+        });
+
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
+</body>
+
+</html>
