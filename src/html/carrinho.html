@@ -1,109 +1,163 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>y Sweet Pc</title>
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css" >
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worten Cart</title>
+    <link rel="stylesheet" href="/src/assets/Styles/categoria.css">
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .cart {
+            width: 90%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        .cart h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .cart .empty {
+            text-align: center;
+            padding: 50px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 60%;
+        }
+        .cart .empty i {
+            font-size: 50px;
+            color: #ccc;
+        }
+        .cart .empty p {
+            font-size: 18px;
+            color: #999;
+        }
+        .summary {
+            width: 35%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .summary h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .summary .total {
+            font-size: 30px;
+            color: #e60012;
+            margin-bottom: 20px;
+        }
+        .summary .checkout {
+            background-color: #ffcccb;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 18px;
+            cursor: not-allowed;
+        }
+        .summary .coupon {
+            background-color: #ffcc00;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .summary .coupon i {
+            margin-right: 10px;
+        }
+        .summary .payment-methods {
+            display: flex;
+            justify-content: space-around;
+        }
+        .summary .payment-methods img {
+            height: 30px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cart {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cart .empty, .summary {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
 <body>
     <div id="navbar-container"></div>
-        <br>
-        <br>
-        <br>
-    <main>
-        <div class="cart-container">
-            <h1>Carrinho de Compras</h1>
-            <table>
-                <thead>
-                    <br>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Preço</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <br>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="product-info">
-                                <img src="https://via.placeholder.com/100" alt="Produto 1">
-                                <span>PS5</span>
-                            </div>
-                        </td>
-                        <td>€199,99</td>
-                        <td>
-                            <input type="number" value="1" min="1">
-                        </td>
-                        <td>€199,99</td>
-                        <td><button>Remover</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-info">
-                                <img src="https://via.placeholder.com/100" alt="Produto 2">
-                                <span>AirPods</span>
-                            </div>
-                        </td>
-                        <td>€299,99</td>
-                        <td>
-                            <input type="number" value="1" min="1">
-                        </td>
-                        <td>€299,99</td>
-                        <td><button>Remover</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-info">
-                                <img src="https://via.placeholder.com/100" alt="Produto 3">
-                                <span>Tv 55" 4K</span>
-                            </div>
-                        </td>
-                        <td>€399,99</td>
-                        <td>
-                            <input type="number" value="1" min="1">
-                        </td>
-                        <td>€399,99</td>
-                        <td><button>Remover</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="cart-summary">
-                <br>
-                <h2>Total: €899,97</h2><!-- Seção de Métodos de Pagamento -->
-                <div class="payment-methods">
-                    <div class="payment-icons">
-                        <img src="/src/assets/img/visa.png" alt="Visa">
-                        <img src="/src/assets/img/multibanco.png" alt="MasterCard">
-                        <img src="/src/assets/img/pay2.png" alt="PayPal">
-                        <img src="/src/assets/img/mbway.png" alt="American Express">
-                    </div>
+    <div class="container">
+        <div class="cart">
+            <div class="empty">
+                <h2>O meu carrinho <span>0 artigos</span></h2>
+                <i class="fas fa-shopping-cart"></i>
+                <p>Carrinho vazio</p>
+                <p>Explora o site e descobre as melhores promoções</p>
+            </div>
+            <div class="summary">
+                <h3>Total</h3>
+                <p>Subtotal carrinho</p>
+                <p>Custos de envio estimados</p>
+                <p class="total">€0,00</p>
+                <button class="checkout" style="margin-bottom: 15px;"><i class="fas fa-shopping-cart"></i> COMPRAR</button>
+                <div class="coupon">
+                    <i class="fas fa-ticket-alt"></i>
+                    <p>Tens um cupão? Aplica-o no momento do pagamento no checkout.</p>
                 </div>
-                <br>
-                <button>Finalizar Compra</button>
+                <div class="payment-methods">
+                    <img src="/src/assets/img/visa.svg" alt="VISA" style="width: 50px;">
+                    <img src="/src/assets/img/mastercard.svg" alt="MasterCard" style="width: 50px;">
+                    <img src="https://www.worten.pt/assetsV4/mb.ajdWQXlj.svg" alt="MB" style="width: 50px;">
+                    <img src="https://www.worten.pt/assetsV4/mbway.dfJA_6fr.svg" alt="MB WAY" style="width: 50px;">
+                </div>
             </div>
         </div>
-    </main>
-    <br>
-    <br>
-    <br>
+    </div>
+    
+    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Scripts -->
     <script src="/src/assets/js/navlink.js"></script>
     <script>
-        // Função para carregar o conteúdo de um arquivo HTML
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-nome');
+                const productPrice = parseFloat(button.getAttribute('data-preco'));
+
+                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
+                alert(`${productName} foi adicionado ao carrinho!`);
+            });
+        });
+        
+        function redirectToProductPage(id, name, price, image) {
+            // Armazena as informações do produto no localStorage
+            localStorage.setItem('productId', id);
+             localStorage.setItem('productName', name);
+             localStorage.setItem('productPrice', price);
+             localStorage.setItem('productImage', image);
+        
+             // Redireciona para a página de detalhes do produto
+             window.location.href = 'detalhes.html';  // Ou o caminho da sua página de detalhes
+         }
+
         function loadHTML(elementId, filePath) {
             fetch(filePath)
                 .then(response => response.text())
@@ -113,22 +167,8 @@
                 .catch(error => console.error('Erro ao carregar o arquivo:', error));
         }
 
-        // Carregar a navbar e o rodapé
         loadHTML('navbar-container', 'navbar.html');
         loadHTML('footer-container', 'footer.html');
-        const cart = [];
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
-
-                // Adiciona o produto ao carrinho
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
     </script>
 </body>
-
 </html>
