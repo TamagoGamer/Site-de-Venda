@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 30px auto 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .order-summary {
+            margin-bottom: 20px;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-summary th {
+            background-color: #f4f4f4;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .payment-section {
+            margin-bottom: 20px;
+        }
+
+        .payment-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .payment-section input[type="text"],
+        .payment-section input[type="email"],
+        .payment-section input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-methods img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: #e60012;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <div class="order-summary">
+            <h3>Resumo do Pedido</h3>
+            <table id="order-summary-table"></table>
+            <p class="total">Total: &euro;<span id="checkout-total">0,00</span></p>
+        </div>
+
+        <div class="payment-section">
+            <h3>Informações de Pagamento</h3>
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" placeholder="Insira seu nome">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Insira seu email">
+
+            <label for="card">Número do Cartão</label>
+            <input type="number" id="card" placeholder="0000 0000 0000 0000">
+
+            <h3>Métodos de Pagamento</h3>
+            <div class="payment-methods">
+                <img src="/src/assets/img/visa.svg" alt="VISA">
+                <img src="/src/assets/img/mastercard.svg" alt="MasterCard">
+                <img src="https://www.worten.pt/assetsV4/mb.ajdWQXlj.svg" alt="MB">
+                <img src="https://www.worten.pt/assetsV4/mbway.dfJA_6fr.svg" alt="MB WAY">
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+        function loadCart() {
+            return JSON.parse(localStorage.getItem("shoppingCart")) || [];
+        }
+
+        function renderOrderSummary() {
+            const cart = loadCart();
+            const table = document.getElementById("order-summary-table");
+            const checkoutTotal = document.getElementById("checkout-total");
+
+            table.innerHTML = `
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                </tr>
+            `;
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.preco * item.quantidade;
+                total += itemTotal;
+
+                const row = `
+                    <tr>
+                        <td>${item.nome}</td>
+                        <td>${item.quantidade}</td>
+                        <td>&euro;${item.preco.toFixed(2)}</td>
+                        <td>&euro;${itemTotal.toFixed(2)}</td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+
+            checkoutTotal.textContent = total.toFixed(2);
+        }
+
+        function finalizePurchase() {
+            alert("Compra finalizada com sucesso! Obrigado por comprar conosco.");
+            localStorage.removeItem("shoppingCart");
+            window.location.href = "/src/html/index.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", renderOrderSummary);
+
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
+</body>
+
+</html>

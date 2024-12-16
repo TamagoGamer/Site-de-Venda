@@ -5,139 +5,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Estilos aprimorados */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .product-details {
             display: flex;
-            justify-content: center;
-            padding: 20px;
-            background-color: #fff;
-            margin-top: 20px;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product-images {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .product-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-images img:hover {
+            transform: scale(1.1);
         }
 
         .product-info {
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-        }
-
-        .product-images {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-
-        .product-images img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        #main-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
+            justify-content: center;
         }
 
         .product-name {
-            font-size: 2em;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
             margin: 10px 0;
         }
 
         .product-price {
-            color: #f56c42; /* Vermelho meio alaranjado */
-            font-size: 1.5em;
+            color: #f56c42;
+            font-size: 1.6rem;
             font-weight: bold;
             margin-bottom: 20px;
-            align-self: flex-end;
         }
 
-        .rating {
+        /* Estilos das estrelas de avaliação */
+        .stars {
+            display: flex;
+            gap: 5px;
             margin-bottom: 20px;
         }
 
-        .rating span {
-            color: #ffd700;
-            font-size: 1.2em;
-            margin-right: 5px;
+        .star {
+            width: 20px;
+            height: 20px;
+            background-color: #dcdcdc;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            transition: background-color 0.3s ease;
         }
 
-        .product-specifications {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-top: 20px;
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .product-specifications h3 {
-            margin-top: 0;
+        .star.filled {
+            background-color: #ffb400;
         }
 
         .add-to-cart-button {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #4caf50;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
             font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
         }
 
         .add-to-cart-button:hover {
             background-color: #45a049;
         }
+
+        .add-to-cart-button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+
+        .cart-feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .product-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <main class="product-details">
-        <section class="product-info">
-            <div class="product-images">
-                <img src="image1.jpg" alt="Imagem 1" onclick="changeMainImage('image1.jpg')">
-                <img src="image2.jpg" alt="Imagem 2" onclick="changeMainImage('image2.jpg')">
-                <img src="image3.jpg" alt="Imagem 3" onclick="changeMainImage('image3.jpg')">
-                <img src="image4.jpg" alt="Imagem 4" onclick="changeMainImage('image4.jpg')">
-            </div>
+    <div id="navbar-container"></div>
+    <main class="product-details" style="margin-bottom: 150px;">
+        <section class="product-images">
+            <!-- Apenas a imagem principal -->
             <img id="main-image" src="" alt="Imagem principal do produto">
+        </section>
+
+        <section class="product-info">
             <h1 id="product-name" class="product-name"></h1>
             <p id="product-price" class="product-price"></p>
-            <div class="rating">
-                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span> <!-- 4 estrelas de avaliação -->
-            </div>
-            <button id="add-to-cart-button" class="add-to-cart-button">Adicionar ao Carrinho</button>
 
-            <div class="product-specifications">
-                <h3>Especificações Técnicas</h3>
-                <ul>
-                    <li>Processador: Intel Core i7</li>
-                    <li>Memória RAM: 16GB</li>
-                    <li>Armazenamento: 512GB SSD</li>
-                    <li>Tela: 15.6" Full HD</li>
-                    <li>Sistema Operacional: Windows 11</li>
-                </ul>
+            <!-- Estrelas de avaliação -->
+            <div class="stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star"></div>
             </div>
+
+            <button id="add-to-cart-button" class="add-to-cart-button">Adicionar ao Carrinho</button>
+            <div class="cart-feedback" id="cart-feedback">Produto adicionado ao carrinho!</div>
         </section>
     </main>
-
+    <div id="footer-container"></div>
     <script>
-        // Recupera os dados do localStorage
+        // Recupera os dados do produto do localStorage
         const productName = localStorage.getItem('productName');
         const productPrice = localStorage.getItem('productPrice');
         const productImage = localStorage.getItem('productImage');
@@ -147,18 +175,49 @@
         document.getElementById('product-price').innerText = `€ ${parseFloat(productPrice).toFixed(2)}`;
         document.getElementById('main-image').src = productImage;
 
-        // Função para mudar a imagem principal
-        function changeMainImage(image) {
-            document.getElementById('main-image').src = image;
-        }
-
         // Função para adicionar ao carrinho
         function addToCart() {
-            alert(`${productName} foi adicionado ao carrinho!`);
+            const cartKey = "shoppingCart"; // Nome da chave no localStorage
+            const cart = JSON.parse(localStorage.getItem(cartKey)) || []; // Recupera o carrinho ou inicializa vazio
+
+            // Verifica se o produto já existe no carrinho
+            const existingProductIndex = cart.findIndex(item => item.nome === productName);
+
+            if (existingProductIndex >= 0) {
+                // Incrementa a quantidade do produto existente
+                cart[existingProductIndex].quantidade += 1;
+            } else {
+                // Adiciona um novo produto ao carrinho
+                cart.push({
+                    nome: productName,
+                    preco: parseFloat(productPrice),
+                    imagem: productImage,
+                    quantidade: 1
+                });
+            }
+
+            // Salva o carrinho atualizado no localStorage
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+
+            // Exibe feedback visual ao usuário
+            const feedback = document.getElementById('cart-feedback');
+            feedback.style.display = 'block';
+            setTimeout(() => feedback.style.display = 'none', 3000); // Esconde após 3 segundos
         }
 
         // Adiciona o evento ao botão de adicionar ao carrinho
         document.getElementById('add-to-cart-button').addEventListener('click', addToCart);
+
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
     </script>
 </body>
 

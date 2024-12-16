@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worten Cart</title>
+    <title>MySweetPC Cart</title>
     <link rel="stylesheet" href="/src/assets/Styles/categoria.css">
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .cart {
@@ -19,52 +20,88 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
+
         .cart h2 {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
         .cart .empty {
             text-align: center;
             padding: 50px;
             border: 2px dashed #ccc;
             border-radius: 10px;
-            width: 60%;
+            width: 100%;
         }
+
         .cart .empty i {
             font-size: 50px;
             color: #ccc;
         }
+
         .cart .empty p {
             font-size: 18px;
             color: #999;
         }
+
+        .cart-items {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .cart-items table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cart-items th,
+        .cart-items td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-items th {
+            background-color: #f4f4f4;
+        }
+
+        .cart-items img {
+            width: 50px;
+        }
+
         .summary {
-            width: 35%;
+            width: 100%;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .summary h3 {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
         .summary .total {
             font-size: 30px;
             color: #e60012;
             margin-bottom: 20px;
         }
+
         .summary .checkout {
-            background-color: #ffcccb;
+            background-color: #ff0400;
             color: white;
             padding: 10px;
             border: none;
             border-radius: 5px;
             width: 100%;
             font-size: 18px;
-            cursor: not-allowed;
+            cursor: pointer;
         }
+
         .summary .coupon {
             background-color: #ffcc00;
             padding: 10px;
@@ -73,38 +110,85 @@
             display: flex;
             align-items: center;
         }
+
         .summary .coupon i {
             margin-right: 10px;
         }
+
         .summary .payment-methods {
             display: flex;
             justify-content: space-around;
         }
+
         .summary .payment-methods img {
             height: 30px;
         }
+
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
             .cart {
                 flex-direction: column;
                 align-items: center;
             }
-            .cart .empty, .summary {
-                width: 90%;
+
+            .cart-items,
+            .summary {
+                width: 100%;
                 margin-bottom: 20px;
+            }
+
+            .cart-items table {
+                font-size: 14px;
+            }
+
+            .summary .checkout {
+                font-size: 16px;
+            }
+
+            .summary .payment-methods img {
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart {
+                padding: 10px;
+            }
+
+            .cart-items table th,
+            .cart-items table td {
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .summary {
+                padding: 15px;
+            }
+
+            .summary .total {
+                font-size: 24px;
+            }
+
+            .summary .checkout {
+                font-size: 14px;
+            }
+
+            .summary .payment-methods img {
+                height: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div id="navbar-container"></div>
     <div class="container">
         <div class="cart">
-            <div class="empty">
-                <h2>O meu carrinho <span>0 artigos</span></h2>
+            <div class="cart-items" id="cart-items">
+                <h2>O meu carrinho <span id="cart-count">0 artigos</span></h2>
+                <table id="cart-table"></table>
+            </div>
+            <div class="empty" id="cart-empty">
+                <h2>O meu carrinho <span id="cart-count">0 artigos</span></h2>
                 <i class="fas fa-shopping-cart"></i>
                 <p>Carrinho vazio</p>
                 <p>Explora o site e descobre as melhores promoções</p>
@@ -113,50 +197,116 @@
                 <h3>Total</h3>
                 <p>Subtotal carrinho</p>
                 <p>Custos de envio estimados</p>
-                <p class="total">€0,00</p>
-                <button class="checkout" style="margin-bottom: 15px;"><i class="fas fa-shopping-cart"></i> COMPRAR</button>
+                <p class="total">&euro;<span id="total-price">0,00</span></p>
+                <button class="checkout" id="checkout-button" style="margin-bottom: 8px;"><i class="fas fa-shopping-cart"></i> COMPRAR</button>
                 <div class="coupon">
                     <i class="fas fa-ticket-alt"></i>
                     <p>Tens um cupão? Aplica-o no momento do pagamento no checkout.</p>
                 </div>
                 <div class="payment-methods">
-                    <img src="/src/assets/img/visa.svg" alt="VISA" style="width: 50px;">
-                    <img src="/src/assets/img/mastercard.svg" alt="MasterCard" style="width: 50px;">
-                    <img src="https://www.worten.pt/assetsV4/mb.ajdWQXlj.svg" alt="MB" style="width: 50px;">
-                    <img src="https://www.worten.pt/assetsV4/mbway.dfJA_6fr.svg" alt="MB WAY" style="width: 50px;">
+                    <img src="/src/assets/img/visa.svg" alt="VISA">
+                    <img src="/src/assets/img/mastercard.svg" alt="MasterCard">
+                    <img src="https://www.worten.pt/assetsV4/mb.ajdWQXlj.svg" alt="MB">
+                    <img src="https://www.worten.pt/assetsV4/mbway.dfJA_6fr.svg" alt="MB WAY">
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Footer -->
     <div id="footer-container"></div>
-
-    <!-- Scripts -->
-    <script src="/src/assets/js/navlink.js"></script>
     <script>
-        const cart = [];
+        const cartKey = "shoppingCart";
 
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
+        function loadCart() {
+            return JSON.parse(localStorage.getItem(cartKey)) || [];
+        }
 
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
-        
-        function redirectToProductPage(id, name, price, image) {
-            // Armazena as informações do produto no localStorage
-            localStorage.setItem('productId', id);
-             localStorage.setItem('productName', name);
-             localStorage.setItem('productPrice', price);
-             localStorage.setItem('productImage', image);
-        
-             // Redireciona para a página de detalhes do produto
-             window.location.href = 'detalhes.html';  // Ou o caminho da sua página de detalhes
-         }
+        function saveCart(cart) {
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+        }
+
+        function renderCart() {
+            const cart = loadCart();
+            const cartTable = document.getElementById("cart-table");
+            const cartEmpty = document.getElementById("cart-empty");
+            const cartItems = document.getElementById("cart-items");
+            const cartCount = document.getElementById("cart-count");
+            const totalPriceElem = document.getElementById("total-price");
+            const checkoutButton = document.getElementById("checkout-button");
+
+            cartTable.innerHTML = "";
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartEmpty.style.display = "block";
+                cartItems.style.display = "none";
+                cartCount.textContent = "0 artigos";
+                checkoutButton.disabled = true;
+                totalPriceElem.textContent = "0,00";
+            } else {
+                cartEmpty.style.display = "none";
+                cartItems.style.display = "block";
+                checkoutButton.disabled = false;
+                cartCount.textContent = `${cart.length} artigo${cart.length > 1 ? 's' : ''}`;
+
+                const headerRow = `
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>`;
+                cartTable.innerHTML = headerRow;
+
+                cart.forEach((item, index) => {
+                    const itemTotal = item.preco * item.quantidade;
+                    total += itemTotal;
+
+                    const row = `
+                        <tr>
+                            <td><img src="${item.imagem || '/src/assets/img/default.jpg'}" alt="${item.nome}"></td>
+                            <td>${item.nome}</td>
+                            <td>
+                                <button onclick="updateQuantity(${index}, -1)">-</button>
+                                ${item.quantidade}
+                                <button onclick="updateQuantity(${index}, 1)">+</button>
+                            </td>
+                            <td>&euro;${item.preco.toFixed(2)}</td>
+                            <td>&euro;${itemTotal.toFixed(2)}</td>
+                            <td><button onclick="removeFromCart(${index})">Remover</button></td>
+                        </tr>`;
+                    cartTable.innerHTML += row;
+                });
+
+                totalPriceElem.textContent = total.toFixed(2);
+            }
+        }
+
+        function updateQuantity(index, change) {
+            const cart = loadCart();
+            cart[index].quantidade += change;
+
+            if (cart[index].quantidade <= 0) {
+                cart.splice(index, 1);
+            }
+
+            saveCart(cart);
+            renderCart();
+        }
+
+        function removeFromCart(index) {
+            const cart = loadCart();
+            cart.splice(index, 1);
+            saveCart(cart);
+            renderCart();
+        }
+
+        document.getElementById("checkout-button").addEventListener("click", () => {
+    window.location.href = "/src/html/checkout.html"; // Redireciona para a página de checkout
+});
+
+        document.addEventListener("DOMContentLoaded", renderCart);
 
         function loadHTML(elementId, filePath) {
             fetch(filePath)
@@ -171,4 +321,5 @@
         loadHTML('footer-container', 'footer.html');
     </script>
 </body>
+
 </html>

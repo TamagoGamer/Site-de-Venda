@@ -48,23 +48,23 @@
         <section class="featured-products">
             <h2>Produtos em Destaque</h2>
             <div class="product-grid">
-                <div class="product-item">
+                <div class="product-item" onclick="redirectToProductPage('5', 'Notebook Gamer', '1499,99', 'https://lojae-s3-prd-files.radiopopular.pt/files/static/images/products/115422_1.jpg')">
                     <img src="https://lojae-s3-prd-files.radiopopular.pt/files/static/images/products/115422_1.jpg" alt="Produto 1">
                     <h3>Notebook Gamer</h3>
                     <p>€ 1.499,99</p>
-                    <button class="add-to-cart" data-nome="Notebook Gamer" data-preco="5999.99">Adicionar ao Carrinho</button>
+                    <button>Ver Detalhes</button>
                 </div>
-                <div class="product-item">
+                <div class="product-item" onclick="redirectToProductPage('4', 'Mouse Sem Fio', '131,99', 'https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg')">
                     <img src="https://www.powerplanetonline.com/cdnassets/raton_gaming_razer_basilisk_ultimate_01_l.jpg" alt="Produto 2">
                     <h3>Mouse Sem Fio</h3>
                     <p>€ 131,99</p>
-                    <button class="add-to-cart" data-nome="Mouse Sem Fio" data-preco="149.99">Adicionar ao Carrinho</button>
+                    <button>Ver Detalhes</button>
                 </div>
-                <div class="product-item">
+                <div class="product-item" onclick="redirectToProductPage('3', 'Teclado Mecânico', '282,90', 'https://s3.chip7.pt/371760/conversions/c7FVbdTp-page.webp')">
                     <img src="https://s3.chip7.pt/371760/conversions/c7FVbdTp-page.webp" alt="Produto 3">
                     <h3>Teclado Mecânico</h3>
                     <p>€ 282,90</p>
-                    <button class="add-to-cart" data-nome="Teclado Mecânico" data-preco="299.99">Adicionar ao Carrinho</button>
+                    <button>Ver Detalhes</button>
                 </div>
             </div>
         </section>
@@ -73,15 +73,15 @@
         <section class="categories">
             <h2>Categorias</h2>
             <div class="category-grid">
-                <div class="category-item" onclick="redirectToProductPage('2', 'Mouse Gamer', '150', '/src/assets/img/msiMonitor.webp')">
+                <div class="category-item">
                     <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/9c/fd/7c/8191388/1540-1.jpg" alt="Categoria 1">
                     <h3>Notebooks</h3>
                 </div>
-                <div class="category-item" onclick="redirectToProductPage('2', 'Mouse Gamer', '150', '/src/assets/img/msiMonitor.webp')">
+                <div class="category-item">
                     <img src="https://s3.chip7.pt/74598/responsive-images/c74dLwu3___page_800_648.webp" alt="Categoria 2">
                     <h3>Periféricos</h3>
                 </div>
-                <div class="category-item" onclick="redirectToProductPage('2', 'Mouse Gamer', '150', '/src/assets/img/msiMonitor.webp')">
+                <div class="category-item">
                     <img src="https://s3.chip7.pt/362899/responsive-images/c7PtMTKQ___page_800_523.webp" alt="Categoria 3">
                     <h3>Hardware</h3>
                 </div>
@@ -93,14 +93,14 @@
             <h2>Presentes de Natal</h2>
             <div class="product-grid">
                 <!-- Produto 1 -->
-                <div class="product-item" onclick="redirectToProductPage('1', 'Headset Gamer', '49,99', '/src/assets/img/headsetGamer.jpg')">
+                <div class="product-item" onclick="redirectToProductPage('1', 'Headset Gamer', '49,99', 'https://m.media-amazon.com/images/I/61kARTmstrL._AC_SX679_.jpg')">
                     <img src="https://m.media-amazon.com/images/I/61kARTmstrL._AC_SX679_.jpg" alt="Headset Gamer">
                     <h3>Headset Gamer</h3>
                     <p>€ 49,99</p>
                     <button>Ver Detalhes</button>
                 </div>
                 <!-- Produto 2 -->
-                <div class="product-item" onclick="redirectToProductPage('2', 'Monitor Curvo', '1.310,31', '/src/assets/img/msiMonitor.webp')">
+                <div class="product-item" onclick="redirectToProductPage('2', 'Monitor Curvo', '1310.31', '/src/assets/img/msiMonitor.webp')">
                     <img src="/src/assets/img/msiMonitor.webp" alt="Monitor Curvo">
                     <h3>Monitor Curvo</h3>
                     <p>€ 1.310,31</p>
@@ -112,22 +112,9 @@
 
     <!-- Footer -->
     <div id="footer-container"></div>
-
-    <!-- Scripts -->
     <script src="/src/assets/js/navlink.js"></script>
+    <!-- Scripts -->
     <script>
-        const cart = [];
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-nome');
-                const productPrice = parseFloat(button.getAttribute('data-preco'));
-
-                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
-                alert(`${productName} foi adicionado ao carrinho!`);
-            });
-        });
-        
         function redirectToProductPage(id, name, price, image) {
             // Armazena as informações do produto no localStorage
             localStorage.setItem('productId', id);

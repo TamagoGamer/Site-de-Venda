@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>y Sweet Pc</title>
-    <link rel="stylesheet" href="/src/assets/Styles/carrinho.css">
+    <title>My Sweet Pc</title>
     <link rel="stylesheet" href="/src/assets/Styles/admin.css">
     <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
     <link rel="stylesheet" href="/src/assets/Styles/main.css">
     <link rel="stylesheet" href="/src/assets/Styles/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/src/assets/Styles/registrar.css">
 </head>
 
 <body>
@@ -18,29 +17,36 @@
     <br>
     <br>
     <br>
-        <main>
-            <div class="login-container">
-                <h1>Login</h1>
-                <br>
-                <form>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Senha" required>
-                    </div>
-                    <button type="submit">Entrar</button>
-                </form>
-                <p>Não tem uma conta? <a href="registrar.html">Registrar</a></p>
-            </div>
-        </main>
-        <br>
-        <br>
-        <br>
-        <div id="footer-container"></div>
-       <script>
-         // Função para carregar o conteúdo de um arquivo HTML
-         function loadHTML(elementId, filePath) {
+    <br>
+    <br>
+    <br>
+    <main>
+        <div class="register-container">
+            <h1>Login</h1>
+            <br>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Não tem uma conta? <a href="registrar.html">Registrar</a></p>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="footer-container"></div>
+    <script src="/src/assets/js/navlink.js"></script>
+    <script>
+        // Função para carregar o conteúdo de um arquivo HTML
+        function loadHTML(elementId, filePath) {
             fetch(filePath)
                 .then(response => response.text())
                 .then(data => {
@@ -53,7 +59,19 @@
         loadHTML('navbar-container', 'navbar.html');
         loadHTML('footer-container', 'footer.html');
 
-       </script>
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-nome');
+                const productPrice = parseFloat(button.getAttribute('data-preco'));
+
+                // Adiciona o produto ao carrinho
+                cart.push({ nome: productName, preco: productPrice, quantidade: 1 });
+                alert(`${productName} foi adicionado ao carrinho!`);
+            });
+        });
+    </script>
 </body>
 
 </html>
