@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - Worten</title>
+    <link rel="stylesheet" href="/src/assets/Styles/navbar.css">
+    <link rel="stylesheet" href="/src/assets/Styles/main.css">
+    <link rel="stylesheet" href="/src/assets/Styles/footer.css">
+    <title>Política de Privacidade - MySweetPC</title>
     <style>
         /* Reset Básico */
         * {
@@ -17,18 +20,6 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
-        }
-
-        /* Cabeçalho */
-        header {
-            background-color: #d91515;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 28px;
         }
 
         /* Conteúdo Principal */
@@ -59,27 +50,16 @@
             margin-bottom: 10px;
         }
 
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            font-size: 14px;
-            margin-top: 30px;
-        }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <h1>Política de Privacidade</h1>
-    </header>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
 
     <!-- Conteúdo Principal -->
     <div class="container">
         <h2>1. Introdução</h2>
-        <p>Na Worten, respeitamos a sua privacidade e estamos comprometidos com a proteção dos seus dados pessoais. Esta política explica como recolhemos, usamos e protegemos as informações fornecidas pelos nossos clientes.</p>
+        <p>Na My Sweet PC, respeitamos a sua privacidade e estamos comprometidos com a proteção dos seus dados pessoais. Esta política explica como recolhemos, usamos e protegemos as informações fornecidas pelos nossos clientes.</p>
 
         <h2>2. Informações que Recolhemos</h2>
         <p>Recolhemos os seguintes tipos de informações:</p>
@@ -125,12 +105,24 @@
         <p>Reservamo-nos o direito de atualizar esta política a qualquer momento. Recomendamos que reveja esta página regularmente para se manter informado sobre como protegemos os seus dados.</p>
 
         <h2>9. Contacte-nos</h2>
-        <p>Se tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contacto conosco através do e-mail: <strong>suporte@worten.pt</strong>.</p>
+        <p>Se tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contacto conosco através do e-mail: <strong>suporte@MySweetPC.pt</strong>.</p>
     </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Worten. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+
+        loadHTML('navbar-container', 'navbar.html');
+        loadHTML('footer-container', 'footer.html');
+    </script>
 </body>
 </html>
